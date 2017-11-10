@@ -119,6 +119,20 @@ namespace Cuestionario_def1
         }
 
 
+        public void llenarComboBox_tipo_pregunta(ComboBox Combo_tipo_pregunta)
+        {
+            MySqlConnection con = ObtenerConexion();
+
+            MySqlCommand cm = new MySqlCommand("select * from Tipo_pregunta;", con);
+            cm.CommandType = CommandType.Text;
+            MySqlDataAdapter da = new MySqlDataAdapter(cm);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            Combo_tipo_pregunta.ValueMember = "idGenero";
+            Combo_tipo_pregunta.DisplayMember = "Descripcion";
+            Combo_tipo_pregunta.DataSource = dt;
+        }
+
 
 
 

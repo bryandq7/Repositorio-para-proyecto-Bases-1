@@ -34,17 +34,20 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.comboBoxtipo_pregunta = new System.Windows.Forms.ComboBox();
+            this.textBoxrespuesta4 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBoxrespuesta3 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxrespuesta2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxrespuesta1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxPregunta = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.labelNombre_cuestionario = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8_numero_de_pregunta = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // comboBox5
@@ -99,6 +102,7 @@
             this.button1.TabIndex = 29;
             this.button1.Text = "Siguiente";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label6
             // 
@@ -109,20 +113,20 @@
             this.label6.TabIndex = 28;
             this.label6.Text = "Seleccione el formato de la siguiente pregunta";
             // 
-            // comboBox1
+            // comboBoxtipo_pregunta
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(308, 276);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(106, 21);
-            this.comboBox1.TabIndex = 27;
+            this.comboBoxtipo_pregunta.FormattingEnabled = true;
+            this.comboBoxtipo_pregunta.Location = new System.Drawing.Point(308, 276);
+            this.comboBoxtipo_pregunta.Name = "comboBoxtipo_pregunta";
+            this.comboBoxtipo_pregunta.Size = new System.Drawing.Size(106, 21);
+            this.comboBoxtipo_pregunta.TabIndex = 27;
             // 
-            // textBox5
+            // textBoxrespuesta4
             // 
-            this.textBox5.Location = new System.Drawing.Point(263, 217);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(384, 20);
-            this.textBox5.TabIndex = 26;
+            this.textBoxrespuesta4.Location = new System.Drawing.Point(263, 217);
+            this.textBoxrespuesta4.Name = "textBoxrespuesta4";
+            this.textBoxrespuesta4.Size = new System.Drawing.Size(384, 20);
+            this.textBoxrespuesta4.TabIndex = 26;
             // 
             // label5
             // 
@@ -133,12 +137,12 @@
             this.label5.TabIndex = 25;
             this.label5.Text = "Escriba la respuesta 4";
             // 
-            // textBox4
+            // textBoxrespuesta3
             // 
-            this.textBox4.Location = new System.Drawing.Point(263, 187);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(384, 20);
-            this.textBox4.TabIndex = 24;
+            this.textBoxrespuesta3.Location = new System.Drawing.Point(263, 187);
+            this.textBoxrespuesta3.Name = "textBoxrespuesta3";
+            this.textBoxrespuesta3.Size = new System.Drawing.Size(384, 20);
+            this.textBoxrespuesta3.TabIndex = 24;
             // 
             // label4
             // 
@@ -149,12 +153,12 @@
             this.label4.TabIndex = 23;
             this.label4.Text = "Escriba la respuesta 3";
             // 
-            // textBox3
+            // textBoxrespuesta2
             // 
-            this.textBox3.Location = new System.Drawing.Point(263, 153);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(384, 20);
-            this.textBox3.TabIndex = 22;
+            this.textBoxrespuesta2.Location = new System.Drawing.Point(263, 153);
+            this.textBoxrespuesta2.Name = "textBoxrespuesta2";
+            this.textBoxrespuesta2.Size = new System.Drawing.Size(384, 20);
+            this.textBoxrespuesta2.TabIndex = 22;
             // 
             // label3
             // 
@@ -165,12 +169,12 @@
             this.label3.TabIndex = 21;
             this.label3.Text = "Escriba la respuesta 2";
             // 
-            // textBox2
+            // textBoxrespuesta1
             // 
-            this.textBox2.Location = new System.Drawing.Point(263, 114);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(384, 20);
-            this.textBox2.TabIndex = 20;
+            this.textBoxrespuesta1.Location = new System.Drawing.Point(263, 114);
+            this.textBoxrespuesta1.Name = "textBoxrespuesta1";
+            this.textBoxrespuesta1.Size = new System.Drawing.Size(384, 20);
+            this.textBoxrespuesta1.TabIndex = 20;
             // 
             // label2
             // 
@@ -181,12 +185,12 @@
             this.label2.TabIndex = 19;
             this.label2.Text = "Escriba la respuesta  1";
             // 
-            // textBox1
+            // textBoxPregunta
             // 
-            this.textBox1.Location = new System.Drawing.Point(213, 44);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(455, 20);
-            this.textBox1.TabIndex = 18;
+            this.textBoxPregunta.Location = new System.Drawing.Point(213, 44);
+            this.textBoxPregunta.Name = "textBoxPregunta";
+            this.textBoxPregunta.Size = new System.Drawing.Size(455, 20);
+            this.textBoxPregunta.TabIndex = 18;
             // 
             // label1
             // 
@@ -197,30 +201,61 @@
             this.label1.TabIndex = 17;
             this.label1.Text = "Escriba su Pregunta:";
             // 
+            // labelNombre_cuestionario
+            // 
+            this.labelNombre_cuestionario.AutoSize = true;
+            this.labelNombre_cuestionario.Location = new System.Drawing.Point(84, 16);
+            this.labelNombre_cuestionario.Name = "labelNombre_cuestionario";
+            this.labelNombre_cuestionario.Size = new System.Drawing.Size(35, 13);
+            this.labelNombre_cuestionario.TabIndex = 34;
+            this.labelNombre_cuestionario.Text = "label7";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(530, 340);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(56, 13);
+            this.label7.TabIndex = 35;
+            this.label7.Text = "Pregunta: ";
+            // 
+            // label8_numero_de_pregunta
+            // 
+            this.label8_numero_de_pregunta.AutoSize = true;
+            this.label8_numero_de_pregunta.Location = new System.Drawing.Point(588, 341);
+            this.label8_numero_de_pregunta.Name = "label8_numero_de_pregunta";
+            this.label8_numero_de_pregunta.Size = new System.Drawing.Size(35, 13);
+            this.label8_numero_de_pregunta.TabIndex = 36;
+            this.label8_numero_de_pregunta.Text = "label8";
+            // 
             // Diseño_de_pregunta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(863, 371);
+            this.Controls.Add(this.label8_numero_de_pregunta);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.labelNombre_cuestionario);
             this.Controls.Add(this.comboBox5);
             this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.comboBoxtipo_pregunta);
+            this.Controls.Add(this.textBoxrespuesta4);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBoxrespuesta3);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBoxrespuesta2);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBoxrespuesta1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxPregunta);
             this.Controls.Add(this.label1);
             this.Name = "Diseño_de_pregunta";
             this.Text = "Diseño_de_pregunta";
+            this.Load += new System.EventHandler(this.Diseño_de_pregunta_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,16 +269,19 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.ComboBox comboBoxtipo_pregunta;
+        private System.Windows.Forms.TextBox textBoxrespuesta4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBoxrespuesta3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxrespuesta2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxrespuesta1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxPregunta;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelNombre_cuestionario;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8_numero_de_pregunta;
     }
 }
