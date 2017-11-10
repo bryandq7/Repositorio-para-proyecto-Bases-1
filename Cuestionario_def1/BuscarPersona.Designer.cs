@@ -89,6 +89,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(409, 172);
             this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // buttonaceptarseleccionado
             // 
@@ -124,6 +125,7 @@
             this.Controls.Add(this.button1);
             this.Name = "BuscarPersona";
             this.Text = "BuscarPersona";
+            this.Load += new System.EventHandler(this.BuscarPersona_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

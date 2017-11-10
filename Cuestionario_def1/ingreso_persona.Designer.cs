@@ -41,15 +41,10 @@
             this.radioButtoncliente = new System.Windows.Forms.RadioButton();
             this.radioButtonadministrador = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
-            this.comboBoxniveldepuesto = new System.Windows.Forms.ComboBox();
             this.textBoxusuario = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.textBoxcontrasena = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBoxsalario = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.comboBoxgenero = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -69,7 +64,6 @@
             this.buttonactualizaringresopersonas = new System.Windows.Forms.Button();
             this.textBoxprimerapellido = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.buttonbuscarcliente = new System.Windows.Forms.Button();
             this.buttonactualizardatos = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -77,7 +71,7 @@
             // comboBoxtipocliente
             // 
             this.comboBoxtipocliente.FormattingEnabled = true;
-            this.comboBoxtipocliente.Location = new System.Drawing.Point(498, 347);
+            this.comboBoxtipocliente.Location = new System.Drawing.Point(140, 272);
             this.comboBoxtipocliente.Name = "comboBoxtipocliente";
             this.comboBoxtipocliente.Size = new System.Drawing.Size(131, 21);
             this.comboBoxtipocliente.TabIndex = 124;
@@ -85,7 +79,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(390, 347);
+            this.label29.Location = new System.Drawing.Point(32, 275);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(78, 13);
             this.label29.TabIndex = 123;
@@ -152,7 +146,7 @@
             // radioButtoncliente
             // 
             this.radioButtoncliente.AutoSize = true;
-            this.radioButtoncliente.Location = new System.Drawing.Point(393, 304);
+            this.radioButtoncliente.Location = new System.Drawing.Point(411, 276);
             this.radioButtoncliente.Name = "radioButtoncliente";
             this.radioButtoncliente.Size = new System.Drawing.Size(57, 17);
             this.radioButtoncliente.TabIndex = 110;
@@ -164,7 +158,7 @@
             // radioButtonadministrador
             // 
             this.radioButtonadministrador.AutoSize = true;
-            this.radioButtonadministrador.Location = new System.Drawing.Point(394, 142);
+            this.radioButtonadministrador.Location = new System.Drawing.Point(411, 240);
             this.radioButtonadministrador.Name = "radioButtonadministrador";
             this.radioButtonadministrador.Size = new System.Drawing.Size(88, 17);
             this.radioButtonadministrador.TabIndex = 109;
@@ -182,14 +176,6 @@
             this.button1.Text = "Agregar Persona";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // comboBoxniveldepuesto
-            // 
-            this.comboBoxniveldepuesto.FormattingEnabled = true;
-            this.comboBoxniveldepuesto.Location = new System.Drawing.Point(497, 253);
-            this.comboBoxniveldepuesto.Name = "comboBoxniveldepuesto";
-            this.comboBoxniveldepuesto.Size = new System.Drawing.Size(131, 21);
-            this.comboBoxniveldepuesto.TabIndex = 98;
             // 
             // textBoxusuario
             // 
@@ -214,23 +200,6 @@
             this.textBoxcontrasena.Size = new System.Drawing.Size(132, 20);
             this.textBoxcontrasena.TabIndex = 95;
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(390, 189);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(39, 13);
-            this.label14.TabIndex = 94;
-            this.label14.Text = "Salario";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
-            // 
-            // textBoxsalario
-            // 
-            this.textBoxsalario.Location = new System.Drawing.Point(497, 186);
-            this.textBoxsalario.Name = "textBoxsalario";
-            this.textBoxsalario.Size = new System.Drawing.Size(132, 20);
-            this.textBoxsalario.TabIndex = 93;
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -239,24 +208,6 @@
             this.label15.Size = new System.Drawing.Size(61, 13);
             this.label15.TabIndex = 92;
             this.label15.Text = "Contraseña";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(390, 220);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(90, 13);
-            this.label16.TabIndex = 91;
-            this.label16.Text = "Fecha de Ingreso";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(390, 254);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(84, 13);
-            this.label17.TabIndex = 90;
-            this.label17.Text = "Nivel del Puesto";
             // 
             // comboBoxgenero
             // 
@@ -415,13 +366,6 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 132;
             // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(497, 220);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 133;
-            // 
             // buttonbuscarcliente
             // 
             this.buttonbuscarcliente.Location = new System.Drawing.Point(393, 459);
@@ -449,7 +393,6 @@
             this.ClientSize = new System.Drawing.Size(719, 526);
             this.Controls.Add(this.buttonactualizardatos);
             this.Controls.Add(this.buttonbuscarcliente);
-            this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.textBoxprimerapellido);
             this.Controls.Add(this.buttonactualizaringresopersonas);
@@ -467,15 +410,10 @@
             this.Controls.Add(this.radioButtoncliente);
             this.Controls.Add(this.radioButtonadministrador);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBoxniveldepuesto);
             this.Controls.Add(this.textBoxusuario);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.textBoxcontrasena);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.textBoxsalario);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label17);
             this.Controls.Add(this.comboBoxgenero);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label12);
@@ -512,15 +450,10 @@
         private System.Windows.Forms.RadioButton radioButtoncliente;
         private System.Windows.Forms.RadioButton radioButtonadministrador;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBoxniveldepuesto;
         private System.Windows.Forms.TextBox textBoxusuario;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBoxcontrasena;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBoxsalario;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox comboBoxgenero;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
@@ -540,7 +473,6 @@
         private System.Windows.Forms.Button buttonactualizaringresopersonas;
         private System.Windows.Forms.TextBox textBoxprimerapellido;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Button buttonbuscarcliente;
         private System.Windows.Forms.Button buttonactualizardatos;
     }

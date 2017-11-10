@@ -30,12 +30,12 @@ namespace Cuestionario_def1
             retorno = comando2.ExecuteNonQuery();
   
 
-            MySqlCommand comando3 = new MySqlCommand(string.Format("Insert into cliente (tipocliente_idtipocliente, telefono_idtelefono, persona_cedula, correo_nombrecorreo, activo) values ('{0}','{1}','{2}','{3}','{4}')",
-                pCliente.id_tipo_cliente, pCliente.Numero_telefono, pCliente.Cedula, pCliente.Correo_electronico, pCliente.activo), Adaptador.ObtenerConexion());
+            MySqlCommand comando3 = new MySqlCommand(string.Format("Insert into cliente (persona_cedula, tipocliente_idtipocliente, telefono_idtelefono, correo_nombrecorreo, activo) values ('{0}','{1}','{2}','{3}','{4}')",
+                pCliente.Cedula, pCliente.id_tipo_cliente, pCliente.Numero_telefono, pCliente.Correo_electronico, pCliente.activo), Adaptador.ObtenerConexion());
             retorno = comando3.ExecuteNonQuery();
 
-            MySqlCommand comando4 = new MySqlCommand(string.Format("Insert into Usuarios_sistema (persona_cedula, Nombre_usuario, Contrasena, activo, Tipo_usuario_idTipo_Usuario) values ('{0}','{1}','{2}','{3}','{4}')",
-            pCliente.Cedula, pCliente.Usuario, pCliente.Contrasena, pCliente.activo, pCliente.id_tipo_usuario), Adaptador.ObtenerConexion());
+            MySqlCommand comando4 = new MySqlCommand(string.Format("Insert into Usuarios_sistema (Nombre_usuario, Contrasena, activo, Tipo_usuario_idTipo_Usuario, cliente_persona_cedula) values ('{0}','{1}','{2}','{3}','{4}')",
+            pCliente.Usuario, pCliente.Contrasena, pCliente.activo, pCliente.id_tipo_usuario, pCliente.Cedula), Adaptador.ObtenerConexion());
             retorno = comando4.ExecuteNonQuery();
 
             return retorno;
@@ -47,8 +47,13 @@ namespace Cuestionario_def1
             List<Cliente> _lista = new List<Cliente>();
 
             MySqlCommand _comando = new MySqlCommand(String.Format(
-           "SELECT cedula, nombre1, nombre2, apellido1, apellido2, activo,  fecha_de_nacimiento, Genero_idGenero FROM Persona  where Nombre1 ='{0}' or Apellido1='{1}'", pNombre, pApellido), Adaptador.ObtenerConexion());
+                "SELECT p.cedula, p.nombre1, p.nombre2, p.apellido1, p.apellido2, p.activo,  p.fecha_de_nacimiento, p.Genero_idGenero, g.Descripcion, u.Nombre_usuario, Co.Nombrecorreo, t.IdTelefono, tu.Tipo_usuario FROM Persona P INNER JOIN Genero G On p.Genero_idGenero = g.idGenero INNER JOIN Usuarios_sistema U on p.cedula = U.cliente_persona_cedula INNER JOIN Cliente C on p.cedula = C.persona_cedula  INNER JOIN Correo Co on C.correo_nombrecorreo = Co.nombrecorreo INNER JOIN Telefono T on C.telefono_idtelefono = T.idtelefono INNER JOIN Tipo_usuario Tu on U.Tipo_usuario_idTipo_usuario = Tu.idTipo_usuario where Nombre1 = '{0}' or Apellido1 = '{1}'", pNombre, pApellido), Adaptador.ObtenerConexion());
+
             MySqlDataReader _reader = _comando.ExecuteReader();
+
+
+
+
             while (_reader.Read())
             {
                 Cliente pCliente = new Cliente();
@@ -60,10 +65,21 @@ namespace Cuestionario_def1
                 pCliente.activo = _reader.GetInt32(5);
                 pCliente.Fecha_Nac = _reader.GetString(6);
                 pCliente.id_genero= _reader.GetInt32(7);
+                pCliente.Genero = _reader.GetString(8);
+                pCliente.Usuario = _reader.GetString(9);
+                pCliente.Correo_electronico = _reader.GetString(10);
+                pCliente.Numero_telefono = _reader.GetInt32(11);
+                pCliente.Descrip_tipousuario = _reader.GetString(12);
 
 
                 _lista.Add(pCliente);
             }
+
+
+            //MySqlCommand _comando1 = new MySqlCommand(String.Format(
+            //"SELECT descripcion  FROM Genero  where idGenero ='{0}'", _reader.GetInt32(7)), Adaptador.ObtenerConexion());
+            //MySqlDataReader _reader1 = _comando.ExecuteReader();
+
 
             return _lista;
         }

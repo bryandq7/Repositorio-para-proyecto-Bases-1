@@ -27,7 +27,12 @@ namespace Cuestionario_def1
         private void button1_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = Clientes_Contr.Buscar(textBoxbuscarnombre.Text, textBoxbuscarapellido1.Text);
-
+            this.dataGridView1.Columns[10].Visible = false;
+            this.dataGridView1.Columns[12].Visible = false;
+            this.dataGridView1.Columns[13].Visible = false;
+            this.dataGridView1.Columns[14].Visible = false;
+            this.dataGridView1.Columns[15].Visible = false;
+            this.dataGridView1.Columns[16].Visible = false;
         }
 
         private void buttonaceptarseleccionado_Click(object sender, EventArgs e)
@@ -41,6 +46,16 @@ namespace Cuestionario_def1
             }
             else
                 MessageBox.Show("debe de seleccionar una fila");
+        }
+
+        private void BuscarPersona_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           this.dataGridView1.Columns["Nombre1"].Visible = false;
         }
     }
 }

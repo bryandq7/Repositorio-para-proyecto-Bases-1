@@ -23,8 +23,7 @@ namespace Cuestionario_def1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (radioButtoncliente.Checked)
-            {
+       
                 Cliente pCliente = new Cliente();
                 pCliente.Nombre1 = textBoxprimernombre.Text.Trim();
                 pCliente.Nombre2 = textBoxsegundonombre.Text.Trim();
@@ -40,8 +39,14 @@ namespace Cuestionario_def1
                 pCliente.Usuario = textBoxusuario.Text.Trim();
                 pCliente.Contrasena = textBoxcontrasena.Text.Trim();
 
-                pCliente.id_tipo_usuario = Convert.ToInt32(1);
-            
+                if (radioButtoncliente.Checked)
+                {
+                    pCliente.id_tipo_usuario = Convert.ToInt32(1);
+                }
+                if (radioButtonadministrador.Checked)
+                {
+                    pCliente.id_tipo_usuario = Convert.ToInt32(2);
+                }
                 pCliente.id_tipo_cliente = Convert.ToInt32(comboBoxtipocliente.SelectedValue);
 
                 pCliente.activo = Convert.ToInt32(1);
@@ -57,44 +62,43 @@ namespace Cuestionario_def1
                     MessageBox.Show("No se pudo guardar el cliente", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
 
-            }
+            
 
             if (radioButtonadministrador.Checked)
             {
-                Administrador pAdmin = new Administrador();
-                pAdmin.Nombre1 = textBoxprimernombre.Text.Trim();
-                pAdmin.Nombre2 = textBoxsegundonombre.Text.Trim();
-                pAdmin.Apellido1 = textBoxprimerapellido.Text.Trim();
-                pAdmin.Apellido2 = textBoxsegundoapellido.Text.Trim();
-                pAdmin.Cedula = Convert.ToInt32(textBoxcedula.Text.Trim());
-                pAdmin.Fecha_Nac = dateTimePicker1.Value.Year + "/" + dateTimePicker1.Value.Month + "/" + dateTimePicker1.Value.Day;
-                pAdmin.id_genero = Convert.ToInt32(comboBoxgenero.SelectedValue);
-                pAdmin.Numero_telefono = Convert.ToInt32(textBoxnumerotelefono.Text.Trim());
-                pAdmin.id_tipo_telefono = Convert.ToInt32(comboBoxtipotelefono.SelectedValue);
-                pAdmin.Correo_electronico = textBoxcorreoelectronico.Text.Trim();
-                pAdmin.id_tipo_correo = Convert.ToInt32(comboBoxtipocorreo.SelectedValue);
-                pAdmin.Usuario = textBoxusuario.Text.Trim();
-                pAdmin.Contrasena = textBoxcontrasena.Text.Trim();
+                //Administrador pAdmin = new Administrador();
+                //pAdmin.Nombre1 = textBoxprimernombre.Text.Trim();
+                //pAdmin.Nombre2 = textBoxsegundonombre.Text.Trim();
+                //pAdmin.Apellido1 = textBoxprimerapellido.Text.Trim();
+                //pAdmin.Apellido2 = textBoxsegundoapellido.Text.Trim();
+                //pAdmin.Cedula = Convert.ToInt32(textBoxcedula.Text.Trim());
+                //pAdmin.Fecha_Nac = dateTimePicker1.Value.Year + "/" + dateTimePicker1.Value.Month + "/" + dateTimePicker1.Value.Day;
+                //pAdmin.id_genero = Convert.ToInt32(comboBoxgenero.SelectedValue);
+                //pAdmin.Numero_telefono = Convert.ToInt32(textBoxnumerotelefono.Text.Trim());
+                //pAdmin.id_tipo_telefono = Convert.ToInt32(comboBoxtipotelefono.SelectedValue);
+                //pAdmin.Correo_electronico = textBoxcorreoelectronico.Text.Trim();
+                //pAdmin.id_tipo_correo = Convert.ToInt32(comboBoxtipocorreo.SelectedValue);
+                //pAdmin.Usuario = textBoxusuario.Text.Trim();
+                //pAdmin.Contrasena = textBoxcontrasena.Text.Trim();
 
-                pAdmin.Fecha_Ing = dateTimePicker2.Value.Year + "/" + dateTimePicker2.Value.Month + "/" + dateTimePicker2.Value.Day;
-                pAdmin.Salario = Convert.ToInt32(textBoxsalario.Text.Trim());
 
-                pAdmin.id_tipo_usuario = Convert.ToInt32(2);
 
-                pAdmin.id_tipo_cajero = Convert.ToInt32(comboBoxniveldepuesto.SelectedValue);
+                //pAdmin.id_tipo_usuario = Convert.ToInt32(2);
 
-                pAdmin.activo = Convert.ToInt32(1);
 
-                int resultado = Administrador_Contr.Agregar(pAdmin);
 
-                if (resultado > 0)
-                {
-                    MessageBox.Show("Cliente Guardado Con Exito!!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("No se pudo guardar el cliente", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
+                //pAdmin.activo = Convert.ToInt32(1);
+
+                //int resultado = Administrador_Contr.Agregar(pAdmin);
+
+                //if (resultado > 0)
+                //{
+                //    MessageBox.Show("Cliente Guardado Con Exito!!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //}
+                //else
+                //{
+                //    MessageBox.Show("No se pudo guardar el cliente", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //}
 
 
             }
@@ -117,7 +121,7 @@ namespace Cuestionario_def1
             cbx.llenarComboBox_genero(comboBoxgenero);
             cbx.llenarComboBox_tipo_Telefono(comboBoxtipotelefono);
             cbx.llenarComboBox_tipo_correo(comboBoxtipocorreo);
-            cbx.llenarComboBox_Nivel_Puesto(comboBoxniveldepuesto);
+
             cbx.llenarComboBox_tipo_cliente(comboBoxtipocliente);
 
 
@@ -128,14 +132,13 @@ namespace Cuestionario_def1
             cbx.llenarComboBox_genero(comboBoxgenero);
             cbx.llenarComboBox_tipo_Telefono(comboBoxtipotelefono);
             cbx.llenarComboBox_tipo_correo(comboBoxtipocorreo);
-            cbx.llenarComboBox_Nivel_Puesto(comboBoxniveldepuesto);
+
             cbx.llenarComboBox_tipo_cliente(comboBoxtipocliente);
 
             radioButtoncliente.Checked = true;
             radioButtonadministrador.Checked = false;
-            dateTimePicker2.Enabled = false;
-            textBoxsalario.Enabled = false;
-            comboBoxniveldepuesto.Enabled = false;
+
+
             comboBoxtipocliente.Enabled = false;
 
             if (radioButtoncliente.Checked)
@@ -144,9 +147,7 @@ namespace Cuestionario_def1
             }
             else if (radioButtonadministrador.Checked)
             {
-                dateTimePicker2.Enabled = true;
-                textBoxsalario.Enabled = true;
-                comboBoxniveldepuesto.Enabled = true;
+
             }
                 
         }
@@ -156,15 +157,11 @@ namespace Cuestionario_def1
 
             if (radioButtonadministrador.Checked)
             {
-                dateTimePicker2.Enabled = true;
-                textBoxsalario.Enabled = true;
-                comboBoxniveldepuesto.Enabled = true;
+
             }
             else
             {
-                dateTimePicker2.Enabled = false;
-                textBoxsalario.Enabled = false;
-                comboBoxniveldepuesto.Enabled = false;
+
             }
         
 

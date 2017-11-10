@@ -25,7 +25,7 @@ namespace Cuestionario_def1
 
         public string Usuario { get; set; }
         public string Contrasena { get; set; }
-
+        public string Descrip_tipousuario { get; set; }
 
         public int id_genero { get; set; }
         public int id_tipo_telefono { get; set; }
@@ -43,7 +43,7 @@ namespace Cuestionario_def1
             int pNumero_telefono, string pCorreo_electronico,
             string pUsuario, string pContrasena,  int pid_genero,
             int pid_tipo_telefono, int pid_tipo_correo, int pid_tipo_cliente,
-            int pid_tipo_usuario, int pactivo)
+            int pid_tipo_usuario, int pactivo, string pDescrip_tipousuario)
 
         {
             this.Cedula = pCedula;
@@ -63,6 +63,7 @@ namespace Cuestionario_def1
             this.id_tipo_usuario = pid_tipo_usuario;
             this.id_tipo_cliente = pid_tipo_cliente;
             this.activo = pactivo;
+            this.Descrip_tipousuario = pDescrip_tipousuario;
 
 
 
