@@ -67,6 +67,7 @@
     <Compile Include="Cliente.cs" />
     <Compile Include="Clientes_Contr.cs" />
     <Compile Include="Controladora.cs" />
+    <Compile Include="Cuestionario.cs" />
     <Compile Include="Diseño_cuestionario.cs">
       <SubType>Form</SubType>
     </Compile>
