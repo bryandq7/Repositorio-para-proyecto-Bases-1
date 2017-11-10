@@ -31,12 +31,28 @@ namespace Cuestionario_def1
 
         public Cuestionario() { }
 
-        public Cuestionario(int pNombre_cuestionario, int pactivo, int pcantidad_preguntas, string pFecha_creacion,
+        public Cuestionario(string pNombre_cuestionario, int pactivo, int pcantidad_preguntas, string pFecha_creacion,
            string pPregunta, int pPuntos, int pidtipo_pregunta, string ptipo_pregunta, string pRespuesta1,
-           string pRespuesta2, string pRespuesta3, string pRespuesta4, string pEstado1)
+           string pRespuesta2, string pRespuesta3, string pRespuesta4, string pEstado1, string pEstado2
+            , string pEstado3, string pEstado4 )
 
         {
-            this.Cedula = pCedula;
+            this.Nombre_cuestionario = pNombre_cuestionario;
+            this.activo = pactivo;
+            this.cantidad_preguntas = pcantidad_preguntas;
+            this.Fecha_creacion = pFecha_creacion;
+            this.Pregunta = pPregunta;
+            this.Puntos = pPuntos;
+            this.idtipo_pregunta = pidtipo_pregunta;
+            this.tipo_pregunta = ptipo_pregunta;
+            this.Respuesta1 = pRespuesta1;
+            this.Respuesta2 = pRespuesta2;
+            this.Respuesta3 = pRespuesta3;
+            this.Respuesta4 = pRespuesta4;
+            this.Estado1 = pEstado1;
+            this.Estado2 = pEstado2;
+            this.Estado3 = pEstado3;
+            this.Estado4 = pEstado4;
         }
 
     }

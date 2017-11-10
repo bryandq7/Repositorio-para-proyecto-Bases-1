@@ -90,18 +90,18 @@ namespace Cuestionario_def1
             Combo_tipo_correo.DataSource = dt;
         }
 
-        public void llenarComboBox_Nivel_Puesto(ComboBox Combo_Nivel_Puesto)
-        {
-            MySqlConnection con = Adaptador.ObtenerConexion();
-            MySqlCommand cm = new MySqlCommand("select * from tipocajero;", con);
-            cm.CommandType = CommandType.Text;
-            MySqlDataAdapter da = new MySqlDataAdapter(cm);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            Combo_Nivel_Puesto.ValueMember = "idtipocajero";
-            Combo_Nivel_Puesto.DisplayMember = "rango";
-            Combo_Nivel_Puesto.DataSource = dt;
-        }
+        //public void llenarComboBox_Nivel_Puesto(ComboBox Combo_Nivel_Puesto)
+        //{
+        //    MySqlConnection con = Adaptador.ObtenerConexion();
+        //    MySqlCommand cm = new MySqlCommand("select * from tipocajero;", con);
+        //    cm.CommandType = CommandType.Text;
+        //    MySqlDataAdapter da = new MySqlDataAdapter(cm);
+        //    DataTable dt = new DataTable();
+        //    da.Fill(dt);
+        //    Combo_Nivel_Puesto.ValueMember = "idtipocajero";
+        //    Combo_Nivel_Puesto.DisplayMember = "rango";
+        //    Combo_Nivel_Puesto.DataSource = dt;
+        //}
 
 
 

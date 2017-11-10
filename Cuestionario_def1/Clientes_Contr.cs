@@ -76,10 +76,6 @@ namespace Cuestionario_def1
             }
 
 
-            //MySqlCommand _comando1 = new MySqlCommand(String.Format(
-            //"SELECT descripcion  FROM Genero  where idGenero ='{0}'", _reader.GetInt32(7)), Adaptador.ObtenerConexion());
-            //MySqlDataReader _reader1 = _comando.ExecuteReader();
-
 
             return _lista;
         }
