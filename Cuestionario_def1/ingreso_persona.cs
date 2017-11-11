@@ -100,7 +100,7 @@ namespace Cuestionario_def1
                 //    MessageBox.Show("No se pudo guardar el cliente", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 //}
 
-
+                this.Close();
             }
 
 
@@ -193,7 +193,7 @@ namespace Cuestionario_def1
                 textBoxsegundoapellido.Text = frm1.Clienteseleccionado.Apellido2;
                 dateTimePicker1.Text = frm1.Clienteseleccionado.Fecha_Nac;
                 cbx.llenarComboBox_genero(comboBoxgenero);
-
+                this.Close();
             }
         }
 
@@ -218,6 +218,8 @@ namespace Cuestionario_def1
                 MessageBox.Show("No se pudo actualizar", "Error al Actualizar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
             }
+
+            this.Close();
         }
     }
 }

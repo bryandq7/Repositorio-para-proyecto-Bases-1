@@ -32,7 +32,7 @@ namespace Cuestionario_def1
 
         private void Diseño_cuestionario_Load(object sender, EventArgs e)
         {
-            cbx.llenarComboBox_tipo_pregunta(comboBox_tipo_pregunta);
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -50,12 +50,11 @@ namespace Cuestionario_def1
 
             frm1.sNombre_cuestionario = textBoxNombre_cuestionario.Text.Trim();
             frm1.scantidad_preguntas = Convert.ToInt32(textBox_cant_preguntas.Text.Trim());
-            frm1.sid_tipo_pregunta = Convert.ToInt32(comboBox_tipo_pregunta.SelectedValue);
             frm1.sfechacreacion = fechaActual.Year + "/" + fechaActual.Month + "/" + fechaActual.Day;
 
             frm1.ShowDialog( );
 
-
+            this.Close();
             
         }
     }

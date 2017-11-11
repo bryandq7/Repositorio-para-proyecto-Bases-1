@@ -53,6 +53,7 @@ namespace Cuestionario_def1
             //        {
                         menu_administrador frm = new menu_administrador();
                         frm.Show();
+                        this.Hide();
             //        }
 
             //    }
