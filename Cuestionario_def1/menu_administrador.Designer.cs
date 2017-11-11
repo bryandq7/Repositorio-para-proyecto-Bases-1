@@ -35,6 +35,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button6
@@ -91,6 +92,7 @@
             this.button1.TabIndex = 16;
             this.button1.Text = "Ingresar Nueva Persona";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -101,11 +103,22 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Menú del Administrador";
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(49, 135);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(166, 39);
+            this.button7.TabIndex = 22;
+            this.button7.Text = "Crear Cuestionario";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // menu_administrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(669, 274);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button5);
@@ -129,5 +142,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button7;
     }
 }

@@ -37,21 +37,24 @@ namespace Cuestionario_def1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Cuestionario pCuestionario = new Cuestionario();
-            DateTime fechaActual = DateTime.Today;
 
-            pCuestionario.Nombre_cuestionario = textBoxNombre_cuestionario.Text.Trim();
-            pCuestionario.cantidad_preguntas = Convert.ToInt32(textBox_cant_preguntas.Text.Trim());
-            pCuestionario.activo = Convert.ToInt32(1);
-            pCuestionario.Fecha_creacion = fechaActual.Year + "/" + fechaActual.Month + "/" + fechaActual.Day;
-            pCuestionario.idtipo_pregunta = Convert.ToInt32(comboBox_tipo_pregunta.SelectedValue);
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-                Diseño_de_pregunta frm1 = new Diseño_de_pregunta();
-                frm1.ShowDialog();
+            Cuestionario pCuestionario = new Cuestionario();
+            DateTime fechaActual = DateTime.Today;
+
+            Diseño_de_pregunta frm1 = new Diseño_de_pregunta();
+
+            frm1.sNombre_cuestionario = textBoxNombre_cuestionario.Text.Trim();
+            frm1.scantidad_preguntas = Convert.ToInt32(textBox_cant_preguntas.Text.Trim());
+            frm1.sid_tipo_pregunta = Convert.ToInt32(comboBox_tipo_pregunta.SelectedValue);
+            frm1.sfechacreacion = fechaActual.Year + "/" + fechaActual.Month + "/" + fechaActual.Day;
+
+            frm1.ShowDialog( );
+
 
             
         }

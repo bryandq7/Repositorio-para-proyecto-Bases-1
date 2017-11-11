@@ -48,6 +48,7 @@
             this.labelNombre_cuestionario = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8_numero_de_pregunta = new System.Windows.Forms.Label();
+            this.labeltipo_pregunta = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // comboBox5
@@ -93,6 +94,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(106, 21);
             this.comboBox2.TabIndex = 30;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -228,11 +230,21 @@
             this.label8_numero_de_pregunta.TabIndex = 36;
             this.label8_numero_de_pregunta.Text = "label8";
             // 
+            // labeltipo_pregunta
+            // 
+            this.labeltipo_pregunta.AutoSize = true;
+            this.labeltipo_pregunta.Location = new System.Drawing.Point(187, 15);
+            this.labeltipo_pregunta.Name = "labeltipo_pregunta";
+            this.labeltipo_pregunta.Size = new System.Drawing.Size(35, 13);
+            this.labeltipo_pregunta.TabIndex = 37;
+            this.labeltipo_pregunta.Text = "label8";
+            // 
             // Diseño_de_pregunta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(863, 371);
+            this.Controls.Add(this.labeltipo_pregunta);
             this.Controls.Add(this.label8_numero_de_pregunta);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.labelNombre_cuestionario);
@@ -283,5 +295,6 @@
         private System.Windows.Forms.Label labelNombre_cuestionario;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8_numero_de_pregunta;
+        private System.Windows.Forms.Label labeltipo_pregunta;
     }
 }

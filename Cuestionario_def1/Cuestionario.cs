@@ -25,7 +25,7 @@ namespace Cuestionario_def1
         public string Estado2 { get; set; }
         public string Estado3 { get; set; }
         public string Estado4 { get; set; }
-
+        public int idCuestionario { get; set; }
 
 
 
@@ -33,8 +33,8 @@ namespace Cuestionario_def1
 
         public Cuestionario(string pNombre_cuestionario, int pactivo, int pcantidad_preguntas, string pFecha_creacion,
            string pPregunta, int pPuntos, int pidtipo_pregunta, string ptipo_pregunta, string pRespuesta1,
-           string pRespuesta2, string pRespuesta3, string pRespuesta4, string pEstado1, string pEstado2
-            , string pEstado3, string pEstado4 )
+           string pRespuesta2, string pRespuesta3, string pRespuesta4, string pEstado1, string pEstado2,
+          int pidCuestionario , string pEstado3, string pEstado4 )
 
         {
             this.Nombre_cuestionario = pNombre_cuestionario;
@@ -53,6 +53,7 @@ namespace Cuestionario_def1
             this.Estado2 = pEstado2;
             this.Estado3 = pEstado3;
             this.Estado4 = pEstado4;
+            this.idCuestionario = pidCuestionario;
         }
 
     }

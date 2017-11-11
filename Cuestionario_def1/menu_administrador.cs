@@ -21,5 +21,17 @@ namespace Cuestionario_def1
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ingreso_persona frm = new ingreso_persona();
+            frm.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Diseño_cuestionario frm1 = new Diseño_cuestionario();
+            frm1.Show();
+        }
     }
 }

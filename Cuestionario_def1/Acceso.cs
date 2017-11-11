@@ -51,7 +51,7 @@ namespace Cuestionario_def1
             //        }
             //        if (valor1==2)
             //        {
-                        ingreso_persona frm = new ingreso_persona();
+                        menu_administrador frm = new menu_administrador();
                         frm.Show();
             //        }
 

@@ -128,8 +128,8 @@ namespace Cuestionario_def1
             MySqlDataAdapter da = new MySqlDataAdapter(cm);
             DataTable dt = new DataTable();
             da.Fill(dt);
-            Combo_tipo_pregunta.ValueMember = "idGenero";
-            Combo_tipo_pregunta.DisplayMember = "Descripcion";
+            Combo_tipo_pregunta.ValueMember = "idTipo_pregunta";
+            Combo_tipo_pregunta.DisplayMember = "detalle_tipo_pregunta";
             Combo_tipo_pregunta.DataSource = dt;
         }
 
