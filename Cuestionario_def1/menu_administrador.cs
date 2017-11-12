@@ -12,6 +12,7 @@ namespace Cuestionario_def1
 {
     public partial class menu_administrador : Form
     {
+        public string sUsuario;
         public menu_administrador()
         {
             InitializeComponent();
@@ -31,6 +32,7 @@ namespace Cuestionario_def1
         private void button7_Click(object sender, EventArgs e)
         {
             Diseño_cuestionario frm1 = new Diseño_cuestionario();
+            frm1.sUsuario = sUsuario;
             frm1.Show();
         }
     }

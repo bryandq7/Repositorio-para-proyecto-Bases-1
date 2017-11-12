@@ -12,7 +12,7 @@ namespace Cuestionario_def1
 {
     public partial class Diseño_cuestionario : Form
     {
-
+        public string sUsuario;
         Adaptador cbx = new Adaptador();
 
         public Diseño_cuestionario()
@@ -47,11 +47,12 @@ namespace Cuestionario_def1
             DateTime fechaActual = DateTime.Today;
 
             Diseño_de_pregunta frm1 = new Diseño_de_pregunta();
-
+            
             frm1.sNombre_cuestionario = textBoxNombre_cuestionario.Text.Trim();
             frm1.scantidad_preguntas = Convert.ToInt32(textBox_cant_preguntas.Text.Trim());
             frm1.sfechacreacion = fechaActual.Year + "/" + fechaActual.Month + "/" + fechaActual.Day;
-
+            frm1.sUsuario = sUsuario;
+            MessageBox.Show(sUsuario, "usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
             frm1.ShowDialog( );
 
             this.Close();

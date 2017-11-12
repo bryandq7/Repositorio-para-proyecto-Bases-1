@@ -16,7 +16,9 @@ namespace Cuestionario_def1
         public int scantidad_preguntas;
         public string sfechacreacion;
         public int contador_preguntas;
-        
+        public string sUsuario;
+        int num_cuestionario = 0;
+
 
         Adaptador cbx = new Adaptador();
 
@@ -56,6 +58,7 @@ namespace Cuestionario_def1
 
             int resultado=0;
 
+            num_cuestionario = num_cuestionario+1;
             int cant_correcto =0;
 
             if(mestado1 == 0)
@@ -69,7 +72,7 @@ namespace Cuestionario_def1
 
             MessageBox.Show(mtipo_pregunta.ToString(), "tipo pregunta", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            MessageBox.Show(mestado1.ToString(), "estado 1", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(sUsuario, "usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             try
             {
@@ -97,9 +100,10 @@ namespace Cuestionario_def1
                 pCuestionario.Estado2 = comboBox3.SelectedItem.ToString();
                 pCuestionario.Estado3 = comboBox4.SelectedItem.ToString();
                 pCuestionario.Estado4 = comboBox5.SelectedItem.ToString();
+                pCuestionario.Usuario = sUsuario;
 
 
-                 resultado = Cuestionario_Contr.Agregar(pCuestionario);
+                 resultado = Cuestionario_Contr.Agregar(pCuestionario, num_cuestionario);
 
             }
 
@@ -125,9 +129,10 @@ namespace Cuestionario_def1
                 pCuestionario.Estado2 = comboBox3.SelectedItem.ToString();
                 pCuestionario.Estado3 = comboBox4.SelectedItem.ToString();
                 pCuestionario.Estado4 = comboBox5.SelectedItem.ToString();
+                    pCuestionario.Usuario = sUsuario;
 
 
-                resultado = Cuestionario_Contr.Agregar(pCuestionario);
+                    resultado = Cuestionario_Contr.Agregar(pCuestionario, num_cuestionario);
 
             }
 
@@ -152,9 +157,10 @@ namespace Cuestionario_def1
                 pCuestionario.Estado2 = comboBox3.SelectedItem.ToString();
                 pCuestionario.Estado3 = comboBox4.SelectedItem.ToString();
                 pCuestionario.Estado4 = comboBox5.SelectedItem.ToString();
+                    pCuestionario.Usuario = sUsuario;
 
 
-                resultado = Cuestionario_Contr.Agregar(pCuestionario);
+                    resultado = Cuestionario_Contr.Agregar(pCuestionario, num_cuestionario);
             }
 
                 if (mtipo_pregunta == 1 && cant_correcto > 1)
