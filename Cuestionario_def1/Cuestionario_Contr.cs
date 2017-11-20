@@ -43,22 +43,22 @@ namespace Cuestionario_def1
 
             int ultimo_idPregunta = Cuestionario_Contr.BuscarIdPregunta();
 
-            MySqlCommand comando2 = new MySqlCommand(string.Format("Insert into Respuesta (Respuesta, Estado,Preguntas_id_preguntas) values ('{0}','{1}','{2}');",
-            pCuestionario.Respuesta1, pCuestionario.Estado1, ultimo_idPregunta), Adaptador.ObtenerConexion());
+            MySqlCommand comando2 = new MySqlCommand(string.Format("Insert into Respuesta (Respuesta,Preguntas_id_preguntas) values ('{0}','{1}');",
+            pCuestionario.Respuesta1, ultimo_idPregunta), Adaptador.ObtenerConexion());
             retorno = comando2.ExecuteNonQuery();
 
 
-            MySqlCommand comando3 = new MySqlCommand(string.Format("Insert into Respuesta (Respuesta, Estado,Preguntas_id_preguntas) values ('{0}','{1}','{2}');",
-            pCuestionario.Respuesta2, pCuestionario.Estado2,ultimo_idPregunta), Adaptador.ObtenerConexion());
+            MySqlCommand comando3 = new MySqlCommand(string.Format("Insert into Respuesta (Respuesta, Preguntas_id_preguntas) values ('{0}','{1}');",
+            pCuestionario.Respuesta2, ultimo_idPregunta), Adaptador.ObtenerConexion());
             retorno = comando3.ExecuteNonQuery();
 
-            MySqlCommand comando4 = new MySqlCommand(string.Format("Insert into Respuesta (Respuesta, Estado,Preguntas_id_preguntas) values ('{0}','{1}','{2}');",
-             pCuestionario.Respuesta3, pCuestionario.Estado3,ultimo_idPregunta), Adaptador.ObtenerConexion());
+            MySqlCommand comando4 = new MySqlCommand(string.Format("Insert into Respuesta (Respuesta, Preguntas_id_preguntas) values ('{0}','{1}');",
+             pCuestionario.Respuesta3, ultimo_idPregunta), Adaptador.ObtenerConexion());
             retorno = comando4.ExecuteNonQuery();
 
 
-            MySqlCommand comando5 = new MySqlCommand(string.Format("Insert into Respuesta (Respuesta, Estado, Preguntas_id_preguntas) values ('{0}','{1}','{2}');",
-             pCuestionario.Respuesta4, pCuestionario.Estado4,ultimo_idPregunta), Adaptador.ObtenerConexion());
+            MySqlCommand comando5 = new MySqlCommand(string.Format("Insert into Respuesta (Respuesta, Preguntas_id_preguntas) values ('{0}','{1}');",
+             pCuestionario.Respuesta4, ultimo_idPregunta), Adaptador.ObtenerConexion());
             retorno = comando5.ExecuteNonQuery();
 
 
@@ -100,9 +100,6 @@ namespace Cuestionario_def1
 
            MySqlDataReader _reader = _comando.ExecuteReader();
 
-
-
-
             while (_reader.Read())
             {
                 Cuestionario pCuestionario = new Cuestionario();
@@ -118,6 +115,66 @@ namespace Cuestionario_def1
                 _lista.Add(pCuestionario);
             }
             return _lista;
+        }
+
+
+        public static List<Cuestionario> ObtenerCuestionario(int pidCuestionario)
+        {
+            List<Cuestionario> _lista = new List<Cuestionario>();
+
+            MySqlConnection conexion = Adaptador.ObtenerConexion();
+
+            MySqlCommand _comando = new MySqlCommand(String.Format("SELECT c.idCuestionario, c.descripcion_cuestionario, c.cantidad_preguntas, p.id_preguntas, p.pregunta, p.tipo_pregunta_idtipo_pregunta,  r.idRespuesta, r.Respuesta " +
+                "FROM Cuestionario C Join Preguntas P on c.idCuestionario = p.cuestionario_idcuestionario1" +
+                " Join Respuesta R on p.id_preguntas = r.preguntas_id_preguntas where idCuestionario={0}", pidCuestionario), conexion);
+            MySqlDataReader _reader = _comando.ExecuteReader();
+            while (_reader.Read())
+            {
+                Cuestionario pCuestionario = new Cuestionario();
+                pCuestionario.idCuestionario = _reader.GetInt32(0);
+                pCuestionario.Nombre_cuestionario = _reader.GetString(1);
+                pCuestionario.cantidad_preguntas = _reader.GetInt32(2);
+                pCuestionario.idPregunta= _reader.GetInt32(3);
+                pCuestionario.Pregunta = _reader.GetString(4);
+                pCuestionario.idtipo_pregunta = _reader.GetInt32(5);
+                pCuestionario.idRespuesta = _reader.GetInt32(6);
+                pCuestionario.Respuesta1 = _reader.GetString(7);
+
+                _lista.Add(pCuestionario);
+
+            }
+
+            conexion.Close();
+            return _lista;
+        }
+
+
+        public static int Agregar_Resultado_Encuesta(Cuestionario pCuestionario)
+        {
+            int retorno = 0;
+
+                MySqlCommand comando = new MySqlCommand(string.Format("Insert into Respuesta_encuestado (Respuesta_encuestado, activo, preguntas_id_preguntas, Usuarios_sistema_Nombre_usuario) values ('{0}','{1}','{2}', '{3}')",
+                pCuestionario.Respuesta1, pCuestionario.activo, pCuestionario.idPregunta, pCuestionario.Usuario), Adaptador.ObtenerConexion());
+                retorno = comando.ExecuteNonQuery();
+
+            return retorno;
+
+        }
+
+        public static int Agregar_Cuestionario_usuario(Cuestionario pCuestionario)
+        {
+            int retorno = 0;
+
+
+                MySqlCommand comando1 = new MySqlCommand(string.Format("Insert into Cuestionario_has_Usuarios (Cuestionario_idCuestionario,Usuarios_sistema_Nombre_usuario, activo, fecha) values ('{0}','{1}','{2}', '{3}')",
+                pCuestionario.idCuestionario, pCuestionario.Usuario, pCuestionario.activo, pCuestionario.Fecha_creacion), Adaptador.ObtenerConexion());
+                retorno = comando1.ExecuteNonQuery();
+
+            
+
+
+            return retorno;
+
         }
     }
 }

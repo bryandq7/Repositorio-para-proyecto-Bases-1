@@ -28,10 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBoxtipo_pregunta = new System.Windows.Forms.ComboBox();
@@ -50,51 +46,6 @@
             this.label8_numero_de_pregunta = new System.Windows.Forms.Label();
             this.labeltipo_pregunta = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
-            "Correcta",
-            "Incorrecta"});
-            this.comboBox5.Location = new System.Drawing.Point(675, 217);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(106, 21);
-            this.comboBox5.TabIndex = 33;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "Correcta",
-            "Incorrecta"});
-            this.comboBox4.Location = new System.Drawing.Point(675, 187);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(106, 21);
-            this.comboBox4.TabIndex = 32;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Correcta",
-            "Incorrecta"});
-            this.comboBox3.Location = new System.Drawing.Point(675, 153);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(106, 21);
-            this.comboBox3.TabIndex = 31;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Correcta",
-            "Incorrecta"});
-            this.comboBox2.Location = new System.Drawing.Point(675, 111);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(106, 21);
-            this.comboBox2.TabIndex = 30;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -248,10 +199,6 @@
             this.Controls.Add(this.label8_numero_de_pregunta);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.labelNombre_cuestionario);
-            this.Controls.Add(this.comboBox5);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.comboBoxtipo_pregunta);
@@ -274,11 +221,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBoxtipo_pregunta;

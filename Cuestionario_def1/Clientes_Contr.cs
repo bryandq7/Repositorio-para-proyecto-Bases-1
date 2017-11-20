@@ -121,6 +121,27 @@ namespace Cuestionario_def1
 
         }
 
+        public static bool Revisar_cedula(int cedula)
+        {
+            int count = 0;
+
+            MySqlCommand _comando = new MySqlCommand(String.Format("Select cedula from persona where Cedula={0}",
+                cedula), Adaptador.ObtenerConexion());
+
+            count = Convert.ToInt32(_comando.ExecuteScalar());
+
+            if (count == 0)
+            {
+                return false;
+            }
+
+            return true;
+
+
+        }
+
+
+
 
     }
 }

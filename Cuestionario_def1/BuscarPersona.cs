@@ -41,7 +41,7 @@ namespace Cuestionario_def1
             {
                 int cedula = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
                 Clienteseleccionado = Clientes_Contr.ObtenerCliente(cedula);
-
+                MessageBox.Show(Clienteseleccionado.Cedula.ToString());
                 this.Close();
             }
             else

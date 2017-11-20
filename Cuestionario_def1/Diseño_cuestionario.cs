@@ -58,5 +58,15 @@ namespace Cuestionario_def1
             this.Close();
             
         }
+
+        private void textBoxNombre_cuestionario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validar.sololetras(e);
+        }
+
+        private void textBox_cant_preguntas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validar.solonumeros(e);
+        }
     }
 }

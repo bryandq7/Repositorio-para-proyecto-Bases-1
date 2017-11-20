@@ -14,6 +14,7 @@ namespace Cuestionario_def1
     {
         Adaptador cbx = new Adaptador();
         public Cliente Cliente_actual = new Cliente();
+        public string cUsuario;
        
         
         public ingreso_persona()
@@ -23,7 +24,107 @@ namespace Cuestionario_def1
 
         private void button1_Click(object sender, EventArgs e)
         {
-       
+            int contador = 0;
+            if (textBoxprimernombre.Text == "")
+            {
+                MessageBox.Show("Revise que todos los campos estén llenos", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                contador = contador + 1;
+            }
+            if (textBoxsegundonombre.Text == "")
+            {
+                MessageBox.Show("Revise que todos los campos estén llenos", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                contador = contador + 1;
+            }
+            if (textBoxprimerapellido.Text == "")
+            {
+                MessageBox.Show("Revise que todos los campos estén llenos", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                contador = contador + 1;
+            }
+            if (textBoxsegundoapellido.Text == "")
+            {
+                MessageBox.Show("Revise que todos los campos estén llenos", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                contador = contador + 1;
+            }
+            if (textBoxcedula.Text == "")
+            {
+                MessageBox.Show("Revise que todos los campos estén llenos", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                contador = contador + 1;
+            }
+            if (dateTimePicker1.Text == "")
+            {
+                MessageBox.Show("Revise que todos los campos estén llenos", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                contador = contador + 1;
+            }
+            if (textBoxnumerotelefono.Text == "")
+            {
+                MessageBox.Show("Revise que todos los campos estén llenos", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                contador = contador + 1;
+            }
+            if (textBoxcorreoelectronico.Text == "")
+            {
+                MessageBox.Show("Revise que todos los campos estén llenos", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                contador = contador + 1;
+            }
+            if (textBoxusuario.Text == "")
+            {
+                MessageBox.Show("Revise que todos los campos estén llenos", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                contador = contador + 1;
+            }
+            if (textBoxcontrasena.Text == "")
+            {
+                MessageBox.Show("Revise que todos los campos estén llenos", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                contador = contador + 1;
+            }
+            if (comboBoxgenero.Text == "")
+            {
+                MessageBox.Show("Revise que todos los campos estén llenos", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                contador = contador + 1;
+            }
+            if (comboBoxtipocliente.Text == "")
+            {
+                MessageBox.Show("Revise que todos los campos estén llenos", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                contador = contador + 1;
+            }
+            if (comboBoxtipocorreo.Text == "")
+            {
+                MessageBox.Show("Revise que todos los campos estén llenos", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                contador = contador + 1;
+            }
+            if (comboBoxtipotelefono.Text == "")
+            {
+                MessageBox.Show("Revise que todos los campos estén llenos", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                contador = contador + 1;
+            }
+
+
+            try
+            {
+                bool cedula = true;
+
+
+                //try
+                //{
+                    cedula = Clientes_Contr.Revisar_cedula(Convert.ToInt32(textBoxcedula.Text.Trim()));
+                //}
+                //catch (Exception Ex)
+                //{
+                //    cedula = 0;
+                //    throw;
+                //}
+
+                int contador2 = 0;
+
+   
+
+                if (cedula == true)
+                {
+                    MessageBox.Show("Esta cédula ya está registrada");
+                    contador2 = contador2 + 1;
+                }
+                if (contador==0 && cedula==false)
+                { 
+
+                
                 Cliente pCliente = new Cliente();
                 pCliente.Nombre1 = textBoxprimernombre.Text.Trim();
                 pCliente.Nombre2 = textBoxsegundonombre.Text.Trim();
@@ -56,52 +157,25 @@ namespace Cuestionario_def1
                 if (resultado > 0)
                 {
                     MessageBox.Show("Cliente Guardado Con Exito!!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
                 }
                 else
                 {
                     MessageBox.Show("No se pudo guardar el cliente", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex);
+                throw;
+            }
+
+
 
             
 
-            if (radioButtonadministrador.Checked)
-            {
-                //Administrador pAdmin = new Administrador();
-                //pAdmin.Nombre1 = textBoxprimernombre.Text.Trim();
-                //pAdmin.Nombre2 = textBoxsegundonombre.Text.Trim();
-                //pAdmin.Apellido1 = textBoxprimerapellido.Text.Trim();
-                //pAdmin.Apellido2 = textBoxsegundoapellido.Text.Trim();
-                //pAdmin.Cedula = Convert.ToInt32(textBoxcedula.Text.Trim());
-                //pAdmin.Fecha_Nac = dateTimePicker1.Value.Year + "/" + dateTimePicker1.Value.Month + "/" + dateTimePicker1.Value.Day;
-                //pAdmin.id_genero = Convert.ToInt32(comboBoxgenero.SelectedValue);
-                //pAdmin.Numero_telefono = Convert.ToInt32(textBoxnumerotelefono.Text.Trim());
-                //pAdmin.id_tipo_telefono = Convert.ToInt32(comboBoxtipotelefono.SelectedValue);
-                //pAdmin.Correo_electronico = textBoxcorreoelectronico.Text.Trim();
-                //pAdmin.id_tipo_correo = Convert.ToInt32(comboBoxtipocorreo.SelectedValue);
-                //pAdmin.Usuario = textBoxusuario.Text.Trim();
-                //pAdmin.Contrasena = textBoxcontrasena.Text.Trim();
-
-
-
-                //pAdmin.id_tipo_usuario = Convert.ToInt32(2);
-
-
-
-                //pAdmin.activo = Convert.ToInt32(1);
-
-                //int resultado = Administrador_Contr.Agregar(pAdmin);
-
-                //if (resultado > 0)
-                //{
-                //    MessageBox.Show("Cliente Guardado Con Exito!!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //}
-                //else
-                //{
-                //    MessageBox.Show("No se pudo guardar el cliente", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                //}
-
-                this.Close();
-            }
 
 
         }
@@ -149,6 +223,19 @@ namespace Cuestionario_def1
             {
 
             }
+
+            if(cUsuario == "")
+            {
+                buttonbuscarcliente.Enabled = false;
+                buttonactualizardatos.Enabled = false;
+            }
+            else
+            {
+                button1.Enabled = false;
+
+            }
+
+            
                 
         }
 
@@ -181,19 +268,30 @@ namespace Cuestionario_def1
 
         private void buttonbuscarcliente_Click(object sender, EventArgs e)
         {
-            BuscarPersona frm1 = new BuscarPersona();
-            frm1.ShowDialog();
+            BuscarPersona frm4 = new BuscarPersona();
+            frm4.ShowDialog();
 
-            if(frm1.Clienteseleccionado != null)
+            if (frm4.Clienteseleccionado != null)
             {
-                Cliente_actual = frm1.Clienteseleccionado;
-                textBoxprimernombre.Text = frm1.Clienteseleccionado.Nombre1;
-                textBoxsegundonombre.Text = frm1.Clienteseleccionado.Nombre2;
-                textBoxprimerapellido.Text = frm1.Clienteseleccionado.Apellido1;
-                textBoxsegundoapellido.Text = frm1.Clienteseleccionado.Apellido2;
-                dateTimePicker1.Text = frm1.Clienteseleccionado.Fecha_Nac;
+                MessageBox.Show(frm4.Clienteseleccionado.Nombre1, "Datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Cliente_actual = frm4.Clienteseleccionado;
+                textBoxprimernombre.Text = frm4.Clienteseleccionado.Nombre1;
+                textBoxsegundonombre.Text = frm4.Clienteseleccionado.Nombre2;
+                textBoxprimerapellido.Text = frm4.Clienteseleccionado.Apellido1;
+                textBoxsegundoapellido.Text = frm4.Clienteseleccionado.Apellido2;
+                dateTimePicker1.Text = frm4.Clienteseleccionado.Fecha_Nac;
                 cbx.llenarComboBox_genero(comboBoxgenero);
-                this.Close();
+                //this.Close();
+                textBoxcedula.Enabled = false;
+                comboBoxtipocliente.Enabled = false;
+                comboBoxtipotelefono.Enabled = false;
+                textBoxnumerotelefono.Enabled = false;
+                textBoxcorreoelectronico.Enabled = false;
+                comboBoxtipocorreo.Enabled = false;
+                textBoxusuario.Enabled = false;
+                textBoxcontrasena.Enabled = false;
+                radioButtonadministrador.Enabled = false;
+                radioButtoncliente.Enabled = false;
             }
         }
 
@@ -221,5 +319,39 @@ namespace Cuestionario_def1
 
             this.Close();
         }
+
+        private void textBoxprimernombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validar.sololetras(e);
+        }
+
+        private void textBoxsegundonombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validar.sololetras(e);
+        }
+
+        private void textBoxprimerapellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validar.sololetras(e);
+        }
+
+        private void textBoxsegundoapellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validar.sololetras(e);
+        }
+
+        private void textBoxcedula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validar.solonumeros(e);
+        }
+
+        private void textBoxnumerotelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validar.solonumeros(e);
+        }
+
+        
+
+
     }
 }

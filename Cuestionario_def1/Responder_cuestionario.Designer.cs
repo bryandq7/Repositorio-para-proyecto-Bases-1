@@ -56,6 +56,7 @@
             this.buttonaceptarseleccionado.TabIndex = 14;
             this.buttonaceptarseleccionado.Text = "Aceptar";
             this.buttonaceptarseleccionado.UseVisualStyleBackColor = true;
+            this.buttonaceptarseleccionado.Click += new System.EventHandler(this.buttonaceptarseleccionado_Click);
             // 
             // dataGridView1
             // 
@@ -122,6 +123,7 @@
             this.Controls.Add(this.label1Nombre_cuestionario);
             this.Name = "Responder_cuestionario";
             this.Text = "Responder_cuestionario";
+            this.Load += new System.EventHandler(this.Responder_cuestionario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

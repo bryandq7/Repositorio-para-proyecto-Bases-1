@@ -35,13 +35,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.buttonaceptarseleccionado = new System.Windows.Forms.Button();
-            this.buttoncancelarseleccionado = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(294, 42);
+            this.button1.Location = new System.Drawing.Point(472, 41);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(119, 35);
             this.button1.TabIndex = 0;
@@ -52,7 +51,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 22);
+            this.label1.Location = new System.Drawing.Point(203, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 1;
@@ -61,14 +60,14 @@
             // 
             // textBoxbuscarnombre
             // 
-            this.textBoxbuscarnombre.Location = new System.Drawing.Point(123, 22);
+            this.textBoxbuscarnombre.Location = new System.Drawing.Point(284, 31);
             this.textBoxbuscarnombre.Name = "textBoxbuscarnombre";
             this.textBoxbuscarnombre.Size = new System.Drawing.Size(121, 20);
             this.textBoxbuscarnombre.TabIndex = 2;
             // 
             // textBoxbuscarapellido1
             // 
-            this.textBoxbuscarapellido1.Location = new System.Drawing.Point(123, 64);
+            this.textBoxbuscarapellido1.Location = new System.Drawing.Point(284, 73);
             this.textBoxbuscarapellido1.Name = "textBoxbuscarapellido1";
             this.textBoxbuscarapellido1.Size = new System.Drawing.Size(121, 20);
             this.textBoxbuscarapellido1.TabIndex = 4;
@@ -76,7 +75,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(42, 64);
+            this.label2.Location = new System.Drawing.Point(203, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 13);
             this.label2.TabIndex = 3;
@@ -87,35 +86,25 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(41, 149);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(409, 172);
+            this.dataGridView1.Size = new System.Drawing.Size(671, 172);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // buttonaceptarseleccionado
             // 
-            this.buttonaceptarseleccionado.Location = new System.Drawing.Point(45, 348);
+            this.buttonaceptarseleccionado.Location = new System.Drawing.Point(294, 370);
             this.buttonaceptarseleccionado.Name = "buttonaceptarseleccionado";
-            this.buttonaceptarseleccionado.Size = new System.Drawing.Size(130, 28);
+            this.buttonaceptarseleccionado.Size = new System.Drawing.Size(130, 39);
             this.buttonaceptarseleccionado.TabIndex = 6;
             this.buttonaceptarseleccionado.Text = "Aceptar";
             this.buttonaceptarseleccionado.UseVisualStyleBackColor = true;
             this.buttonaceptarseleccionado.Click += new System.EventHandler(this.buttonaceptarseleccionado_Click);
             // 
-            // buttoncancelarseleccionado
-            // 
-            this.buttoncancelarseleccionado.Location = new System.Drawing.Point(294, 349);
-            this.buttoncancelarseleccionado.Name = "buttoncancelarseleccionado";
-            this.buttoncancelarseleccionado.Size = new System.Drawing.Size(133, 27);
-            this.buttoncancelarseleccionado.TabIndex = 7;
-            this.buttoncancelarseleccionado.Text = "Cancelar";
-            this.buttoncancelarseleccionado.UseVisualStyleBackColor = true;
-            // 
             // BuscarPersona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(492, 395);
-            this.Controls.Add(this.buttoncancelarseleccionado);
+            this.ClientSize = new System.Drawing.Size(770, 446);
             this.Controls.Add(this.buttonaceptarseleccionado);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBoxbuscarapellido1);
@@ -141,6 +130,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button buttonaceptarseleccionado;
-        private System.Windows.Forms.Button buttoncancelarseleccionado;
     }
 }

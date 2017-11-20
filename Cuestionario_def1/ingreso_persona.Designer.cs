@@ -97,9 +97,11 @@
             // textBoxnumerotelefono
             // 
             this.textBoxnumerotelefono.Location = new System.Drawing.Point(138, 314);
+            this.textBoxnumerotelefono.MaxLength = 8;
             this.textBoxnumerotelefono.Name = "textBoxnumerotelefono";
             this.textBoxnumerotelefono.Size = new System.Drawing.Size(132, 20);
             this.textBoxnumerotelefono.TabIndex = 118;
+            this.textBoxnumerotelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxnumerotelefono_KeyPress);
             // 
             // label25
             // 
@@ -130,6 +132,7 @@
             // textBoxcorreoelectronico
             // 
             this.textBoxcorreoelectronico.Location = new System.Drawing.Point(138, 416);
+            this.textBoxcorreoelectronico.MaxLength = 40;
             this.textBoxcorreoelectronico.Name = "textBoxcorreoelectronico";
             this.textBoxcorreoelectronico.Size = new System.Drawing.Size(133, 20);
             this.textBoxcorreoelectronico.TabIndex = 112;
@@ -148,10 +151,10 @@
             this.radioButtoncliente.AutoSize = true;
             this.radioButtoncliente.Location = new System.Drawing.Point(411, 276);
             this.radioButtoncliente.Name = "radioButtoncliente";
-            this.radioButtoncliente.Size = new System.Drawing.Size(57, 17);
+            this.radioButtoncliente.Size = new System.Drawing.Size(82, 17);
             this.radioButtoncliente.TabIndex = 110;
             this.radioButtoncliente.TabStop = true;
-            this.radioButtoncliente.Text = "Cliente";
+            this.radioButtoncliente.Text = "Encuestado";
             this.radioButtoncliente.UseVisualStyleBackColor = true;
             this.radioButtoncliente.CheckedChanged += new System.EventHandler(this.radioButtoncliente_CheckedChanged);
             // 
@@ -160,10 +163,10 @@
             this.radioButtonadministrador.AutoSize = true;
             this.radioButtonadministrador.Location = new System.Drawing.Point(411, 240);
             this.radioButtonadministrador.Name = "radioButtonadministrador";
-            this.radioButtonadministrador.Size = new System.Drawing.Size(88, 17);
+            this.radioButtonadministrador.Size = new System.Drawing.Size(85, 17);
             this.radioButtonadministrador.TabIndex = 109;
             this.radioButtonadministrador.TabStop = true;
-            this.radioButtonadministrador.Text = "Administrador";
+            this.radioButtonadministrador.Text = "Encuestador";
             this.radioButtonadministrador.UseVisualStyleBackColor = true;
             this.radioButtonadministrador.CheckedChanged += new System.EventHandler(this.radioButtonadministrador_CheckedChanged);
             // 
@@ -180,6 +183,7 @@
             // textBoxusuario
             // 
             this.textBoxusuario.Location = new System.Drawing.Point(497, 43);
+            this.textBoxusuario.MaxLength = 40;
             this.textBoxusuario.Name = "textBoxusuario";
             this.textBoxusuario.Size = new System.Drawing.Size(132, 20);
             this.textBoxusuario.TabIndex = 97;
@@ -196,6 +200,7 @@
             // textBoxcontrasena
             // 
             this.textBoxcontrasena.Location = new System.Drawing.Point(497, 75);
+            this.textBoxcontrasena.MaxLength = 40;
             this.textBoxcontrasena.Name = "textBoxcontrasena";
             this.textBoxcontrasena.Size = new System.Drawing.Size(132, 20);
             this.textBoxcontrasena.TabIndex = 95;
@@ -245,9 +250,11 @@
             // textBoxprimernombre
             // 
             this.textBoxprimernombre.Location = new System.Drawing.Point(139, 43);
+            this.textBoxprimernombre.MaxLength = 40;
             this.textBoxprimernombre.Name = "textBoxprimernombre";
             this.textBoxprimernombre.Size = new System.Drawing.Size(132, 20);
             this.textBoxprimernombre.TabIndex = 82;
+            this.textBoxprimernombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxprimernombre_KeyPress);
             // 
             // label8
             // 
@@ -261,9 +268,11 @@
             // textBoxsegundonombre
             // 
             this.textBoxsegundonombre.Location = new System.Drawing.Point(139, 75);
+            this.textBoxsegundonombre.MaxLength = 40;
             this.textBoxsegundonombre.Name = "textBoxsegundonombre";
             this.textBoxsegundonombre.Size = new System.Drawing.Size(132, 20);
             this.textBoxsegundonombre.TabIndex = 80;
+            this.textBoxsegundonombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxsegundonombre_KeyPress);
             // 
             // label7
             // 
@@ -305,9 +314,11 @@
             // textBoxcedula
             // 
             this.textBoxcedula.Location = new System.Drawing.Point(139, 173);
+            this.textBoxcedula.MaxLength = 9;
             this.textBoxcedula.Name = "textBoxcedula";
             this.textBoxcedula.Size = new System.Drawing.Size(132, 20);
             this.textBoxcedula.TabIndex = 72;
+            this.textBoxcedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxcedula_KeyPress);
             // 
             // label3
             // 
@@ -321,9 +332,11 @@
             // textBoxsegundoapellido
             // 
             this.textBoxsegundoapellido.Location = new System.Drawing.Point(139, 147);
+            this.textBoxsegundoapellido.MaxLength = 40;
             this.textBoxsegundoapellido.Name = "textBoxsegundoapellido";
             this.textBoxsegundoapellido.Size = new System.Drawing.Size(132, 20);
             this.textBoxsegundoapellido.TabIndex = 70;
+            this.textBoxsegundoapellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxsegundoapellido_KeyPress);
             // 
             // label1
             // 
@@ -355,9 +368,11 @@
             // textBoxprimerapellido
             // 
             this.textBoxprimerapellido.Location = new System.Drawing.Point(138, 116);
+            this.textBoxprimerapellido.MaxLength = 40;
             this.textBoxprimerapellido.Name = "textBoxprimerapellido";
             this.textBoxprimerapellido.Size = new System.Drawing.Size(132, 20);
             this.textBoxprimerapellido.TabIndex = 131;
+            this.textBoxprimerapellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxprimerapellido_KeyPress);
             // 
             // dateTimePicker1
             // 

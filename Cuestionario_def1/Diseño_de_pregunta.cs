@@ -51,24 +51,14 @@ namespace Cuestionario_def1
         private void button1_Click(object sender, EventArgs e)
         {
             int mtipo_pregunta = Convert.ToInt32(comboBoxtipo_pregunta.SelectedValue);
-            int mestado1 = Convert.ToInt32(comboBox2.SelectedIndex.ToString());
-            int mestado2 = Convert.ToInt32(comboBox3.SelectedIndex.ToString());
-            int mestado3 = Convert.ToInt32(comboBox4.SelectedIndex.ToString());
-            int mestado4 = Convert.ToInt32(comboBox5.SelectedIndex.ToString());
+
 
             int resultado=0;
 
             num_cuestionario = num_cuestionario+1;
-            int cant_correcto =0;
 
-            if(mestado1 == 0)
-            {cant_correcto = cant_correcto + 1;}
-            if (mestado2 == 0)
-            {cant_correcto = cant_correcto + 1;}
-            if (mestado3 == 0)
-            {cant_correcto = cant_correcto + 1;}
-            if (mestado4 == 0)
-            {cant_correcto = cant_correcto + 1;}
+
+
 
             MessageBox.Show(mtipo_pregunta.ToString(), "tipo pregunta", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -79,7 +69,7 @@ namespace Cuestionario_def1
 
   
 
-            if (mtipo_pregunta == 1 && cant_correcto ==1)
+            if (mtipo_pregunta == 1)
             {
                 contador_preguntas = contador_preguntas + 1;
 
@@ -96,10 +86,7 @@ namespace Cuestionario_def1
                 pCuestionario.Respuesta2 = textBoxrespuesta2.Text.Trim();
                 pCuestionario.Respuesta3 = textBoxrespuesta3.Text.Trim();
                 pCuestionario.Respuesta4 = textBoxrespuesta4.Text.Trim();
-                pCuestionario.Estado1 = comboBox2.SelectedItem.ToString();
-                pCuestionario.Estado2 = comboBox3.SelectedItem.ToString();
-                pCuestionario.Estado3 = comboBox4.SelectedItem.ToString();
-                pCuestionario.Estado4 = comboBox5.SelectedItem.ToString();
+
                 pCuestionario.Usuario = sUsuario;
 
 
@@ -107,7 +94,7 @@ namespace Cuestionario_def1
 
             }
 
-            if (mtipo_pregunta == 2 && cant_correcto >= 1)
+            if (mtipo_pregunta == 2 )
             {
 
                 contador_preguntas = contador_preguntas + 1;
@@ -125,10 +112,7 @@ namespace Cuestionario_def1
                 pCuestionario.Respuesta2 = textBoxrespuesta2.Text.Trim();
                 pCuestionario.Respuesta3 = textBoxrespuesta3.Text.Trim();
                 pCuestionario.Respuesta4 = textBoxrespuesta4.Text.Trim();
-                pCuestionario.Estado1 = comboBox2.SelectedItem.ToString();
-                pCuestionario.Estado2 = comboBox3.SelectedItem.ToString();
-                pCuestionario.Estado3 = comboBox4.SelectedItem.ToString();
-                pCuestionario.Estado4 = comboBox5.SelectedItem.ToString();
+
                     pCuestionario.Usuario = sUsuario;
 
 
@@ -136,7 +120,7 @@ namespace Cuestionario_def1
 
             }
 
-            if (mtipo_pregunta == 3 && cant_correcto > 1)
+            if (mtipo_pregunta == 3 )
             {
                 contador_preguntas = contador_preguntas + 1;
 
@@ -153,33 +137,14 @@ namespace Cuestionario_def1
                 pCuestionario.Respuesta2 = textBoxrespuesta2.Text.Trim();
                 pCuestionario.Respuesta3 = textBoxrespuesta3.Text.Trim();
                 pCuestionario.Respuesta4 = textBoxrespuesta4.Text.Trim();
-                pCuestionario.Estado1 = comboBox2.SelectedItem.ToString();
-                pCuestionario.Estado2 = comboBox3.SelectedItem.ToString();
-                pCuestionario.Estado3 = comboBox4.SelectedItem.ToString();
-                pCuestionario.Estado4 = comboBox5.SelectedItem.ToString();
+
                     pCuestionario.Usuario = sUsuario;
 
 
                     resultado = Cuestionario_Contr.Agregar(pCuestionario, num_cuestionario);
             }
 
-                if (mtipo_pregunta == 1 && cant_correcto > 1)
-                {
-
-                    MessageBox.Show("Escogió mas de una Opción correcta cuando eligió Tipo de Pregunta " +
-                        " de selección única", "Revise su Pregunta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-
-                if (mtipo_pregunta == 3 && cant_correcto == 1)
-                {
-                    MessageBox.Show("Escogió SOLO una Opción correcta cuando eligió Tipo de Pregunta " +
-                        " de selección multiple", "Revise su Pregunta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-
-                if (cant_correcto == 0)
-                {
-                    MessageBox.Show("Debe escoger al menos una respuesta correcta", "Revise su Pregunta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+               
 
             }
             catch (Exception ex)
@@ -193,8 +158,6 @@ namespace Cuestionario_def1
                 if (resultado > 0)
             {
                 MessageBox.Show("Cuestionario Guardado Con Exito!!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
 
             }
             else
@@ -210,10 +173,6 @@ namespace Cuestionario_def1
                 textBoxrespuesta2.Clear();
                 textBoxrespuesta3.Clear();
                 textBoxrespuesta4.Clear();
-                comboBox2.ResetText();
-                comboBox3.ResetText();
-                comboBox4.ResetText();
-                comboBox5.ResetText();
                 label8_numero_de_pregunta.Text = Convert.ToString(contador_preguntas + 1 + "/" + scantidad_preguntas);
 
                 //Diseño_de_pregunta frm1 = new Diseño_de_pregunta();

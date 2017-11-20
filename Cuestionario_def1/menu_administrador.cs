@@ -35,5 +35,17 @@ namespace Cuestionario_def1
             frm1.sUsuario = sUsuario;
             frm1.Show();
         }
+
+        private void menu_administrador_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormFactura frmfc = new FormFactura();
+            frmfc.ShowDialog();
+
+        }
     }
 }

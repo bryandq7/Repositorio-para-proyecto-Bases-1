@@ -12,7 +12,7 @@ namespace Cuestionario_def1
 {
     public partial class Responder_cuestionario : Form
     {
-        public Cuestionario Cuestionarioseleccionado { get; set; }
+        public List<Cuestionario> Cuestionarioseleccionado = new List<Cuestionario>();
 
         public Responder_cuestionario()
         {
@@ -30,12 +30,48 @@ namespace Cuestionario_def1
             this.dataGridView1.Columns[8].Visible = false;
             this.dataGridView1.Columns[9].Visible = false;
             this.dataGridView1.Columns[10].Visible = false;
-            this.dataGridView1.Columns[12].Visible = false;
-            this.dataGridView1.Columns[13].Visible = false;
             this.dataGridView1.Columns[11].Visible = false;
-            this.dataGridView1.Columns[14].Visible = false;
-            this.dataGridView1.Columns[15].Visible = false;
+            this.dataGridView1.Columns[13].Visible = false;
             this.dataGridView1.Columns[17].Visible = false;
+            this.dataGridView1.Columns[18].Visible = false;
+
+        }
+
+        private void buttonaceptarseleccionado_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 1)
+            {
+                int id_cuestionario = Convert.ToInt32(dataGridView1.CurrentRow.Cells[12].Value);
+                Cuestionarioseleccionado = Cuestionario_Contr.ObtenerCuestionario(id_cuestionario);
+
+                //for (int i = 0; i < Cuestionarioseleccionado.Count; i++)
+                //{
+                //    if (Cuestionarioseleccionado != null)
+                //    {
+                //        if (Cuestionarioseleccionado.idtipo_pregunta == 1)
+                //        {
+                //            Form_seleccion_unica frmsu = new Form_seleccion_unica();
+                //            frmsu.ShowDialog();
+
+                //        }
+                //        if (Cuestionarioseleccionado.idtipo_pregunta == 2)
+                //        {
+
+                //        }
+                //        if (Cuestionarioseleccionado.idtipo_pregunta == 3)
+                //        {
+
+                //        }
+                //    }
+                    this.Close();
+                }
+            else
+                MessageBox.Show("debe de seleccionar una fila");
+            }
+
+        private void Responder_cuestionario_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

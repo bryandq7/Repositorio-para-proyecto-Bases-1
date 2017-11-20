@@ -52,6 +52,7 @@
             this.textBoxNombre_cuestionario.Size = new System.Drawing.Size(109, 20);
             this.textBoxNombre_cuestionario.TabIndex = 2;
             this.textBoxNombre_cuestionario.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBoxNombre_cuestionario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNombre_cuestionario_KeyPress);
             // 
             // textBox_cant_preguntas
             // 
@@ -59,6 +60,7 @@
             this.textBox_cant_preguntas.Name = "textBox_cant_preguntas";
             this.textBox_cant_preguntas.Size = new System.Drawing.Size(109, 20);
             this.textBox_cant_preguntas.TabIndex = 4;
+            this.textBox_cant_preguntas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_cant_preguntas_KeyPress);
             // 
             // label2
             // 

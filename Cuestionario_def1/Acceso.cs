@@ -14,7 +14,7 @@ namespace Cuestionario_def1
 {
     public partial class Acceso : Form
     {
-
+        public Cuestionario Cuestionario_actual = new Cuestionario();
         MySqlCommand cmd = new MySqlCommand();
         public Acceso()
         {
@@ -45,26 +45,30 @@ namespace Cuestionario_def1
 
 
                     if (valor1 == 1)
-                    {
-                        Responder_cuestionario frm1 = new Responder_cuestionario();
-                        frm1.Show();
-                    }
-                    if (valor1 == 2)
-                    {
-                        menu_administrador frm = new menu_administrador();
-                        frm.Show();
-                        frm.sUsuario = textBoxusuario1.Text.Trim();
-                        this.Hide();
+                              {
+                        menu_cliente frm1 = new menu_cliente();
+                        MessageBox.Show(textBoxusuario1.Text.Trim(), "usuario", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        frm1.sUsuario = textBoxusuario1.Text.Trim();
+                        frm1.ShowDialog();
 
-
-                    }
 
                 }
-                else
+                if (valor1 == 2)
                 {
-                    MessageBox.Show("Usuario o contraseña inválidos, intentelo de nuevo");
+                    menu_administrador frm = new menu_administrador();
+                       frm.Show();
+            frm.sUsuario = textBoxusuario1.Text.Trim();
+            this.Hide();
+
+
+        }
+
+    }
+                    else
+                    {
+                        MessageBox.Show("Usuario o contraseña inválidos, intentelo de nuevo");
+                    }
                 }
-            }
             catch (Exception ex)
             {
 
@@ -78,6 +82,13 @@ namespace Cuestionario_def1
         private void Acceso_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ingreso_persona frm5 = new ingreso_persona();
+            frm5.cUsuario = textBoxusuario1.Text.Trim();
+            frm5.Show();
         }
     }
 }

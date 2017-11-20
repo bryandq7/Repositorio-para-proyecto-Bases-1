@@ -81,6 +81,38 @@
     <Compile Include="Diseño_de_pregunta.Designer.cs">
       <DependentUpon>Diseño_de_pregunta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Factura.cs" />
+    <Compile Include="Factura_contr.cs" />
+    <Compile Include="FormFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFactura.Designer.cs">
+      <DependentUpon>FormFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formfalso_verdadero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formfalso_verdadero.Designer.cs">
+      <DependentUpon>Formfalso_verdadero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSeleccion_multiple.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSeleccion_multiple.Designer.cs">
+      <DependentUpon>FormSeleccion_multiple.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_pagar_factura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_pagar_factura.Designer.cs">
+      <DependentUpon>Form_pagar_factura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_seleccion_unica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_seleccion_unica.Designer.cs">
+      <DependentUpon>Form_seleccion_unica.cs</DependentUpon>
+    </Compile>
     <Compile Include="ingreso_persona.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +140,7 @@
       <DependentUpon>Responder_cuestionario.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuario_Contr.cs" />
+    <Compile Include="Validar.cs" />
     <EmbeddedResource Include="Acceso.resx">
       <DependentUpon>Acceso.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,6 +152,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Diseño_de_pregunta.resx">
       <DependentUpon>Diseño_de_pregunta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFactura.resx">
+      <DependentUpon>FormFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formfalso_verdadero.resx">
+      <DependentUpon>Formfalso_verdadero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSeleccion_multiple.resx">
+      <DependentUpon>FormSeleccion_multiple.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_pagar_factura.resx">
+      <DependentUpon>Form_pagar_factura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_seleccion_unica.resx">
+      <DependentUpon>Form_seleccion_unica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ingreso_persona.resx">
       <DependentUpon>ingreso_persona.cs</DependentUpon>
