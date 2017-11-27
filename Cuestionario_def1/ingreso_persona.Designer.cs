@@ -81,9 +81,9 @@
             this.label29.AutoSize = true;
             this.label29.Location = new System.Drawing.Point(32, 275);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(78, 13);
+            this.label29.Size = new System.Drawing.Size(103, 13);
             this.label29.TabIndex = 123;
-            this.label29.Text = "Tipo de Cliente";
+            this.label29.Text = "Tipo de Encuestado";
             // 
             // label24
             // 

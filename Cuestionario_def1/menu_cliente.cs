@@ -22,11 +22,12 @@ namespace Cuestionario_def1
         private void button1_Buscarcuestionario_Click(object sender, EventArgs e)
         {
             Responder_cuestionario frm1 = new Responder_cuestionario();
+            frm1.usuario = sUsuario;
             frm1.ShowDialog();
 
             List<Cuestionario> Cuestionarioseleccionado1 = frm1.Cuestionarioseleccionado;
 
-            dataGridView1.DataSource = Cuestionarioseleccionado1;
+            //dataGridView1.DataSource = Cuestionarioseleccionado1;
 
             if (Cuestionarioseleccionado1 != null)
             {
@@ -98,7 +99,13 @@ namespace Cuestionario_def1
 
         private void menu_cliente_Load(object sender, EventArgs e)
         {
+            
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ingreso_persona frm = new ingreso_persona();
+            frm.Show();
         }
     }
 }

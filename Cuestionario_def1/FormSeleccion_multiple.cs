@@ -42,51 +42,68 @@ namespace Cuestionario_def1
             Cuestionario pCuestionario = new Cuestionario();
             DateTime fechaActual = DateTime.Today;
             int resultado = 0;
-            if (checkBox1.Checked)
+            int suma = 0;
+
+            if ((checkBox1.Checked == false) &&
+                (checkBox2.Checked == false) &&
+                (checkBox3.Checked == false) &&
+                (checkBox4.Checked == false))
             {
-                pCuestionario.activo = Convert.ToInt32(1);
-                pCuestionario.Usuario = sUsuario;
-                pCuestionario.Respuesta1 = srespuesta1;
-                pCuestionario.idPregunta = Convert.ToInt32(id_pregunta1);
-                pCuestionario.Fecha_creacion = fechaActual.Year + "/" + fechaActual.Month + "/" + fechaActual.Day;
-                pCuestionario.idCuestionario = idCuestionario;
-                resultado = Cuestionario_Contr.Agregar_Resultado_Encuesta(pCuestionario);
+                suma = 1;
+
+                MessageBox.Show("Debe seleccionar al menos una opción");
             }
 
-            if (checkBox2.Checked)
+            if (suma == 0)
             {
-                pCuestionario.activo = Convert.ToInt32(1);
-                pCuestionario.Usuario = sUsuario;
-                pCuestionario.Respuesta1 = srespuesta2;
-                pCuestionario.idPregunta = Convert.ToInt32(id_pregunta1);
-                pCuestionario.Fecha_creacion = fechaActual.Year + "/" + fechaActual.Month + "/" + fechaActual.Day;
-                pCuestionario.idCuestionario = idCuestionario;
-                resultado = Cuestionario_Contr.Agregar_Resultado_Encuesta(pCuestionario);
+
+                if (checkBox1.Checked)
+                {
+                    pCuestionario.activo = Convert.ToInt32(1);
+                    pCuestionario.Usuario = sUsuario;
+                    pCuestionario.Respuesta1 = srespuesta1;
+                    pCuestionario.idPregunta = Convert.ToInt32(id_pregunta1);
+                    pCuestionario.Fecha_creacion = fechaActual.Year + "/" + fechaActual.Month + "/" + fechaActual.Day;
+                    pCuestionario.idCuestionario = idCuestionario;
+                    resultado = Cuestionario_Contr.Agregar_Resultado_Encuesta(pCuestionario);
+                }
+
+                if (checkBox2.Checked)
+                {
+                    pCuestionario.activo = Convert.ToInt32(1);
+                    pCuestionario.Usuario = sUsuario;
+                    pCuestionario.Respuesta1 = srespuesta2;
+                    pCuestionario.idPregunta = Convert.ToInt32(id_pregunta1);
+                    pCuestionario.Fecha_creacion = fechaActual.Year + "/" + fechaActual.Month + "/" + fechaActual.Day;
+                    pCuestionario.idCuestionario = idCuestionario;
+                    resultado = Cuestionario_Contr.Agregar_Resultado_Encuesta(pCuestionario);
+                }
+
+                if (checkBox3.Checked)
+                {
+                    pCuestionario.activo = Convert.ToInt32(1);
+                    pCuestionario.Usuario = sUsuario;
+                    pCuestionario.Respuesta1 = srespuesta3;
+                    pCuestionario.idPregunta = Convert.ToInt32(id_pregunta1);
+                    pCuestionario.Fecha_creacion = fechaActual.Year + "/" + fechaActual.Month + "/" + fechaActual.Day;
+                    pCuestionario.idCuestionario = idCuestionario;
+                    resultado = Cuestionario_Contr.Agregar_Resultado_Encuesta(pCuestionario);
+                }
+
+                if (checkBox4.Checked)
+                {
+                    pCuestionario.activo = Convert.ToInt32(1);
+                    pCuestionario.Usuario = sUsuario;
+                    pCuestionario.Respuesta1 = srespuesta4;
+                    pCuestionario.idPregunta = Convert.ToInt32(id_pregunta1);
+                    pCuestionario.Fecha_creacion = fechaActual.Year + "/" + fechaActual.Month + "/" + fechaActual.Day;
+                    pCuestionario.idCuestionario = idCuestionario;
+                    resultado = Cuestionario_Contr.Agregar_Resultado_Encuesta(pCuestionario);
+                }
+                this.Close();
+
             }
 
-            if (checkBox3.Checked)
-            {
-                pCuestionario.activo = Convert.ToInt32(1);
-                pCuestionario.Usuario = sUsuario;
-                pCuestionario.Respuesta1 = srespuesta3;
-                pCuestionario.idPregunta = Convert.ToInt32(id_pregunta1);
-                pCuestionario.Fecha_creacion = fechaActual.Year + "/" + fechaActual.Month + "/" + fechaActual.Day;
-                pCuestionario.idCuestionario = idCuestionario;
-                resultado = Cuestionario_Contr.Agregar_Resultado_Encuesta(pCuestionario);
             }
-
-            if (checkBox4.Checked)
-            {
-                pCuestionario.activo = Convert.ToInt32(1);
-                pCuestionario.Usuario = sUsuario;
-                pCuestionario.Respuesta4 = srespuesta4;
-                pCuestionario.idPregunta = Convert.ToInt32(id_pregunta1);
-                pCuestionario.Fecha_creacion = fechaActual.Year + "/" + fechaActual.Month + "/" + fechaActual.Day;
-                pCuestionario.idCuestionario = idCuestionario;
-                resultado = Cuestionario_Contr.Agregar_Resultado_Encuesta(pCuestionario);
-            }
-
-            this.Close();
-        }
     }
 }

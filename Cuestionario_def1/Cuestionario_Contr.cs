@@ -95,8 +95,8 @@ namespace Cuestionario_def1
                 "INNER JOIN Cuestionario_has_usuarios CHU On c.idCuestionario = chu.Cuestionario_idCuestionario " +
                 "INNER JOIN Usuarios_sistema U on  chu.Usuarios_sistema_Nombre_usuario = U.Nombre_usuario " +
                 "INNER JOIN Cliente Cl  on U.cliente_persona_cedula = Cl.persona_cedula " +
-                "INNER JOIN Persona P on Cl.persona_cedula = p.cedula" +
-                " where Descripcion_cuestionario = '{0}' or Nombre1 = '{1}'", pNombre_cuestionario, pNombre_creador), Adaptador.ObtenerConexion());
+                "INNER JOIN Persona P on Cl.persona_cedula = p.cedula " +
+                "where (Descripcion_cuestionario = '{0}' or Nombre1 = '{1}') and Tipo_usuario_idTipo_usuario = '{2}'", pNombre_cuestionario, pNombre_creador, 2), Adaptador.ObtenerConexion());
 
            MySqlDataReader _reader = _comando.ExecuteReader();
 
@@ -111,6 +111,61 @@ namespace Cuestionario_def1
                 pCuestionario.Apellid1_creador = _reader.GetString(5);
                 pCuestionario.Apellido2_creador= _reader.GetString(6);
               
+
+                _lista.Add(pCuestionario);
+            }
+            return _lista;
+        }
+
+        public static List<Cuestionario> reporteCuestionario(string pNombre_cuestionario)
+        {
+            List<Cuestionario> _lista = new List<Cuestionario>();
+
+            MySqlCommand _comando = new MySqlCommand(String.Format(
+                "Select cu.Cuestionario_idCuestionario, Count(*) Total, C.descripcion_cuestionario "+
+                "from Cuestionario_has_Usuarios CU "+
+                "Join Cuestionario C On cu.Cuestionario_idCuestionario = C.idcuestionario "+
+                "Join Usuarios_sistema U  on cu.Usuarios_sistema_Nombre_usuario = u.Nombre_usuario "+
+                "where c.descripcion_cuestionario = '{0}' and u.Tipo_usuario_idTipo_usuario = {1}; ", pNombre_cuestionario, 1), Adaptador.ObtenerConexion());
+
+            MySqlDataReader _reader = _comando.ExecuteReader();
+
+            while (_reader.Read())
+            {
+                Cuestionario pCuestionario = new Cuestionario();
+                pCuestionario.idCuestionario = _reader.GetInt32(0);
+                pCuestionario.Puntos = _reader.GetInt32(1);
+                pCuestionario.Nombre_cuestionario = _reader.GetString(2);
+
+                _lista.Add(pCuestionario);
+            }
+            return _lista;
+        }
+
+
+        public static List<Cuestionario> reporteRespuestas(string pNombre_cuestionario)
+        {
+            List<Cuestionario> _lista = new List<Cuestionario>();
+
+            MySqlCommand _comando = new MySqlCommand(String.Format(
+                "Select  c.descripcion_cuestionario, p.pregunta, re.Respuesta_encuestado, count(*) " +
+                "from Respuesta_encuestado re " +
+                "Join Preguntas P On re.Preguntas_id_preguntas = P.id_preguntas " +
+                "Join Cuestionario C On p.Cuestionario_idCuestionario1 = C.idcuestionario " +
+                "where c.descripcion_cuestionario = '{0}' " +
+                "group By Respuesta_encuestado " +
+                "order By p.pregunta desc; " , pNombre_cuestionario), Adaptador.ObtenerConexion());
+
+            MySqlDataReader _reader = _comando.ExecuteReader();
+
+            while (_reader.Read())
+            {
+                Cuestionario pCuestionario = new Cuestionario();
+                pCuestionario.Nombre_cuestionario = _reader.GetString(0);
+                pCuestionario.Pregunta= _reader.GetString(1);
+                pCuestionario.Respuesta1 = _reader.GetString(2);
+                pCuestionario.Puntos = _reader.GetInt32(3);
+
 
                 _lista.Add(pCuestionario);
             }
@@ -176,5 +231,7 @@ namespace Cuestionario_def1
             return retorno;
 
         }
+
+
     }
 }

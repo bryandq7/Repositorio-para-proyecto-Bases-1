@@ -47,18 +47,19 @@ namespace Cuestionario_def1
                     if (valor1 == 1)
                               {
                         menu_cliente frm1 = new menu_cliente();
-                        MessageBox.Show(textBoxusuario1.Text.Trim(), "usuario", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        //MessageBox.Show(textBoxusuario1.Text.Trim(), "usuario", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         frm1.sUsuario = textBoxusuario1.Text.Trim();
-                        frm1.ShowDialog();
+                        frm1.Show();
+                        this.Hide();
 
 
-                }
+                    }
                 if (valor1 == 2)
                 {
                     menu_administrador frm = new menu_administrador();
                        frm.Show();
-            frm.sUsuario = textBoxusuario1.Text.Trim();
-            this.Hide();
+                        frm.sUsuario = textBoxusuario1.Text.Trim();
+                        this.Hide();
 
 
         }

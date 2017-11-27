@@ -46,6 +46,7 @@ namespace Cuestionario_def1
             label8_numero_de_pregunta.Text = Convert.ToString(contador_preguntas+1+"/"+scantidad_preguntas);
             labelNombre_cuestionario.Text = sNombre_cuestionario;
             labeltipo_pregunta.Text = comboBoxtipo_pregunta.SelectedText.ToString();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -57,94 +58,104 @@ namespace Cuestionario_def1
 
             num_cuestionario = num_cuestionario+1;
 
+            //MessageBox.Show(mtipo_pregunta.ToString(), "tipo pregunta", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-
-
-            MessageBox.Show(mtipo_pregunta.ToString(), "tipo pregunta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            MessageBox.Show(sUsuario, "usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //MessageBox.Show(sUsuario, "usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             try
             {
+                int suma = 0;
+                if ((textBoxrespuesta1.Text == "") ||
+                    (textBoxrespuesta2.Text == "") ||
+                    (textBoxrespuesta3.Text == "") ||
+                    (textBoxrespuesta4.Text == ""))
+                {
+                    suma = 1;
 
-  
+                    MessageBox.Show("Debe ingresar información en todas las cajas");
+                }
 
-            if (mtipo_pregunta == 1)
-            {
-                contador_preguntas = contador_preguntas + 1;
-
-                Cuestionario pCuestionario = new Cuestionario();
-                DateTime fechaActual = DateTime.Today;
-
-                pCuestionario.Nombre_cuestionario = sNombre_cuestionario;
-                pCuestionario.cantidad_preguntas = scantidad_preguntas;
-                pCuestionario.activo = Convert.ToInt32(1);
-                pCuestionario.Fecha_creacion = fechaActual.Year + "/" + fechaActual.Month + "/" + fechaActual.Day;
-                pCuestionario.idtipo_pregunta = Convert.ToInt32(comboBoxtipo_pregunta.SelectedValue);
-                pCuestionario.Pregunta = textBoxPregunta.Text.Trim();
-                pCuestionario.Respuesta1 = textBoxrespuesta1.Text.Trim();
-                pCuestionario.Respuesta2 = textBoxrespuesta2.Text.Trim();
-                pCuestionario.Respuesta3 = textBoxrespuesta3.Text.Trim();
-                pCuestionario.Respuesta4 = textBoxrespuesta4.Text.Trim();
-
-                pCuestionario.Usuario = sUsuario;
+                if (suma == 0)
+                {
 
 
-                 resultado = Cuestionario_Contr.Agregar(pCuestionario, num_cuestionario);
 
-            }
+                    if (mtipo_pregunta == 1)
+                    {
+                        contador_preguntas = contador_preguntas + 1;
 
-            if (mtipo_pregunta == 2 )
-            {
+                        Cuestionario pCuestionario = new Cuestionario();
+                        DateTime fechaActual = DateTime.Today;
 
-                contador_preguntas = contador_preguntas + 1;
+                        pCuestionario.Nombre_cuestionario = sNombre_cuestionario;
+                        pCuestionario.cantidad_preguntas = scantidad_preguntas;
+                        pCuestionario.activo = Convert.ToInt32(1);
+                        pCuestionario.Fecha_creacion = fechaActual.Year + "/" + fechaActual.Month + "/" + fechaActual.Day;
+                        pCuestionario.idtipo_pregunta = Convert.ToInt32(comboBoxtipo_pregunta.SelectedValue);
+                        pCuestionario.Pregunta = textBoxPregunta.Text.Trim();
+                        pCuestionario.Respuesta1 = textBoxrespuesta1.Text.Trim();
+                        pCuestionario.Respuesta2 = textBoxrespuesta2.Text.Trim();
+                        pCuestionario.Respuesta3 = textBoxrespuesta3.Text.Trim();
+                        pCuestionario.Respuesta4 = textBoxrespuesta4.Text.Trim();
 
-                Cuestionario pCuestionario = new Cuestionario();
-                DateTime fechaActual = DateTime.Today;
-
-                pCuestionario.Nombre_cuestionario = sNombre_cuestionario;
-                pCuestionario.cantidad_preguntas = scantidad_preguntas;
-                pCuestionario.activo = Convert.ToInt32(1);
-                pCuestionario.Fecha_creacion = fechaActual.Year + "/" + fechaActual.Month + "/" + fechaActual.Day;
-                pCuestionario.idtipo_pregunta = Convert.ToInt32(comboBoxtipo_pregunta.SelectedValue);
-                pCuestionario.Pregunta = textBoxPregunta.Text.Trim();
-                pCuestionario.Respuesta1 = textBoxrespuesta1.Text.Trim();
-                pCuestionario.Respuesta2 = textBoxrespuesta2.Text.Trim();
-                pCuestionario.Respuesta3 = textBoxrespuesta3.Text.Trim();
-                pCuestionario.Respuesta4 = textBoxrespuesta4.Text.Trim();
-
-                    pCuestionario.Usuario = sUsuario;
+                        pCuestionario.Usuario = sUsuario;
 
 
-                    resultado = Cuestionario_Contr.Agregar(pCuestionario, num_cuestionario);
+                        resultado = Cuestionario_Contr.Agregar(pCuestionario, num_cuestionario);
 
-            }
+                    }
 
-            if (mtipo_pregunta == 3 )
-            {
-                contador_preguntas = contador_preguntas + 1;
+                    if (mtipo_pregunta == 2)
+                    {
 
-                Cuestionario pCuestionario = new Cuestionario();
-                DateTime fechaActual = DateTime.Today;
+                        contador_preguntas = contador_preguntas + 1;
 
-                pCuestionario.Nombre_cuestionario = sNombre_cuestionario;
-                pCuestionario.cantidad_preguntas = scantidad_preguntas;
-                pCuestionario.activo = Convert.ToInt32(1);
-                pCuestionario.Fecha_creacion = fechaActual.Year + "/" + fechaActual.Month + "/" + fechaActual.Day;
-                pCuestionario.idtipo_pregunta = Convert.ToInt32(comboBoxtipo_pregunta.SelectedValue);
-                pCuestionario.Pregunta = textBoxPregunta.Text.Trim();
-                pCuestionario.Respuesta1 = textBoxrespuesta1.Text.Trim();
-                pCuestionario.Respuesta2 = textBoxrespuesta2.Text.Trim();
-                pCuestionario.Respuesta3 = textBoxrespuesta3.Text.Trim();
-                pCuestionario.Respuesta4 = textBoxrespuesta4.Text.Trim();
+                        Cuestionario pCuestionario = new Cuestionario();
+                        DateTime fechaActual = DateTime.Today;
 
-                    pCuestionario.Usuario = sUsuario;
+                        pCuestionario.Nombre_cuestionario = sNombre_cuestionario;
+                        pCuestionario.cantidad_preguntas = scantidad_preguntas;
+                        pCuestionario.activo = Convert.ToInt32(1);
+                        pCuestionario.Fecha_creacion = fechaActual.Year + "/" + fechaActual.Month + "/" + fechaActual.Day;
+                        pCuestionario.idtipo_pregunta = Convert.ToInt32(comboBoxtipo_pregunta.SelectedValue);
+                        pCuestionario.Pregunta = textBoxPregunta.Text.Trim();
+                        pCuestionario.Respuesta1 = textBoxrespuesta1.Text.Trim();
+                        pCuestionario.Respuesta2 = textBoxrespuesta2.Text.Trim();
+                        pCuestionario.Respuesta3 = textBoxrespuesta3.Text.Trim();
+                        pCuestionario.Respuesta4 = textBoxrespuesta4.Text.Trim();
+
+                        pCuestionario.Usuario = sUsuario;
 
 
-                    resultado = Cuestionario_Contr.Agregar(pCuestionario, num_cuestionario);
-            }
+                        resultado = Cuestionario_Contr.Agregar(pCuestionario, num_cuestionario);
+                    }
 
-               
+
+                    if (mtipo_pregunta == 3)
+                    {
+                        contador_preguntas = contador_preguntas + 1;
+
+                        Cuestionario pCuestionario = new Cuestionario();
+                        DateTime fechaActual = DateTime.Today;
+
+                        pCuestionario.Nombre_cuestionario = sNombre_cuestionario;
+                        pCuestionario.cantidad_preguntas = scantidad_preguntas;
+                        pCuestionario.activo = Convert.ToInt32(1);
+                        pCuestionario.Fecha_creacion = fechaActual.Year + "/" + fechaActual.Month + "/" + fechaActual.Day;
+                        pCuestionario.idtipo_pregunta = Convert.ToInt32(comboBoxtipo_pregunta.SelectedValue);
+                        pCuestionario.Pregunta = textBoxPregunta.Text.Trim();
+                        pCuestionario.Respuesta1 = textBoxrespuesta1.Text.Trim();
+                        pCuestionario.Respuesta2 = textBoxrespuesta2.Text.Trim();
+                        pCuestionario.Respuesta3 = textBoxrespuesta3.Text.Trim();
+                        pCuestionario.Respuesta4 = textBoxrespuesta4.Text.Trim();
+
+                        pCuestionario.Usuario = sUsuario;
+
+
+                        resultado = Cuestionario_Contr.Agregar(pCuestionario, num_cuestionario);
+                    }
+
+                }
 
             }
             catch (Exception ex)
@@ -157,12 +168,12 @@ namespace Cuestionario_def1
 
                 if (resultado > 0)
             {
-                MessageBox.Show("Cuestionario Guardado Con Exito!!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Pregunta Guardada Con Exito!!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             else
             {
-                MessageBox.Show("No se pudo guardar el Cuestionario", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No se pudo guardar la Pregunta", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
             if (contador_preguntas<scantidad_preguntas && resultado > 0)

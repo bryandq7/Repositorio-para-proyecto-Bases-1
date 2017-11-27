@@ -39,6 +39,10 @@
             this.comboBox2FV = new System.Windows.Forms.ComboBox();
             this.comboBox3FV = new System.Windows.Forms.ComboBox();
             this.comboBox4FV = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1_nombre_cuestionario
@@ -72,7 +76,7 @@
             // labelRespuesta1
             // 
             this.labelRespuesta1.AutoSize = true;
-            this.labelRespuesta1.Location = new System.Drawing.Point(158, 125);
+            this.labelRespuesta1.Location = new System.Drawing.Point(217, 125);
             this.labelRespuesta1.Name = "labelRespuesta1";
             this.labelRespuesta1.Size = new System.Drawing.Size(35, 13);
             this.labelRespuesta1.TabIndex = 7;
@@ -81,7 +85,7 @@
             // labelRespuesta2
             // 
             this.labelRespuesta2.AutoSize = true;
-            this.labelRespuesta2.Location = new System.Drawing.Point(158, 172);
+            this.labelRespuesta2.Location = new System.Drawing.Point(217, 172);
             this.labelRespuesta2.Name = "labelRespuesta2";
             this.labelRespuesta2.Size = new System.Drawing.Size(35, 13);
             this.labelRespuesta2.TabIndex = 8;
@@ -90,7 +94,7 @@
             // labelRespuesta3
             // 
             this.labelRespuesta3.AutoSize = true;
-            this.labelRespuesta3.Location = new System.Drawing.Point(158, 219);
+            this.labelRespuesta3.Location = new System.Drawing.Point(217, 219);
             this.labelRespuesta3.Name = "labelRespuesta3";
             this.labelRespuesta3.Size = new System.Drawing.Size(35, 13);
             this.labelRespuesta3.TabIndex = 9;
@@ -99,7 +103,7 @@
             // labelRespuesta4
             // 
             this.labelRespuesta4.AutoSize = true;
-            this.labelRespuesta4.Location = new System.Drawing.Point(158, 266);
+            this.labelRespuesta4.Location = new System.Drawing.Point(217, 266);
             this.labelRespuesta4.Name = "labelRespuesta4";
             this.labelRespuesta4.Size = new System.Drawing.Size(35, 13);
             this.labelRespuesta4.TabIndex = 10;
@@ -111,7 +115,7 @@
             this.comboBox1FV.Items.AddRange(new object[] {
             "Falso",
             "Verdadero"});
-            this.comboBox1FV.Location = new System.Drawing.Point(69, 122);
+            this.comboBox1FV.Location = new System.Drawing.Point(128, 122);
             this.comboBox1FV.Name = "comboBox1FV";
             this.comboBox1FV.Size = new System.Drawing.Size(79, 21);
             this.comboBox1FV.TabIndex = 11;
@@ -122,7 +126,7 @@
             this.comboBox2FV.Items.AddRange(new object[] {
             "Falso",
             "Verdadero"});
-            this.comboBox2FV.Location = new System.Drawing.Point(69, 172);
+            this.comboBox2FV.Location = new System.Drawing.Point(128, 172);
             this.comboBox2FV.Name = "comboBox2FV";
             this.comboBox2FV.Size = new System.Drawing.Size(79, 21);
             this.comboBox2FV.TabIndex = 12;
@@ -133,7 +137,7 @@
             this.comboBox3FV.Items.AddRange(new object[] {
             "Falso",
             "Verdadero"});
-            this.comboBox3FV.Location = new System.Drawing.Point(69, 216);
+            this.comboBox3FV.Location = new System.Drawing.Point(128, 216);
             this.comboBox3FV.Name = "comboBox3FV";
             this.comboBox3FV.Size = new System.Drawing.Size(79, 21);
             this.comboBox3FV.TabIndex = 13;
@@ -144,16 +148,56 @@
             this.comboBox4FV.Items.AddRange(new object[] {
             "Falso",
             "Verdadero"});
-            this.comboBox4FV.Location = new System.Drawing.Point(69, 263);
+            this.comboBox4FV.Location = new System.Drawing.Point(128, 263);
             this.comboBox4FV.Name = "comboBox4FV";
             this.comboBox4FV.Size = new System.Drawing.Size(79, 21);
             this.comboBox4FV.TabIndex = 14;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(85, 266);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(16, 13);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "4)";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(85, 219);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(16, 13);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "3)";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(85, 175);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(16, 13);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "2)";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(85, 125);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(16, 13);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "1)";
             // 
             // Formfalso_verdadero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(713, 388);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox4FV);
             this.Controls.Add(this.comboBox3FV);
             this.Controls.Add(this.comboBox2FV);
@@ -186,5 +230,9 @@
         private System.Windows.Forms.ComboBox comboBox2FV;
         private System.Windows.Forms.ComboBox comboBox3FV;
         private System.Windows.Forms.ComboBox comboBox4FV;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

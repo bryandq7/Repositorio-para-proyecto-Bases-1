@@ -43,6 +43,16 @@ namespace Cuestionario_def1
 
         private void button2_Click(object sender, EventArgs e)
         {
+            int contador = 0;
+            if(textBoxNombre_cuestionario.Text=="" || textBox_cant_preguntas.Text == "")
+            {
+                MessageBox.Show("Ingrese datos en las cajas de texto");
+                contador = 1;
+            }
+
+            if (contador==0)
+            {
+
             Cuestionario pCuestionario = new Cuestionario();
             DateTime fechaActual = DateTime.Today;
 
@@ -56,7 +66,9 @@ namespace Cuestionario_def1
             frm1.ShowDialog( );
 
             this.Close();
-            
+
+            }
+
         }
 
         private void textBoxNombre_cuestionario_KeyPress(object sender, KeyPressEventArgs e)
@@ -67,6 +79,11 @@ namespace Cuestionario_def1
         private void textBox_cant_preguntas_KeyPress(object sender, KeyPressEventArgs e)
         {
             Validar.solonumeros(e);
+        }
+
+        private void textBox_cant_preguntas_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

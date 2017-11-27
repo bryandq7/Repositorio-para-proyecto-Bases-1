@@ -99,70 +99,102 @@ namespace Cuestionario_def1
 
             try
             {
-                bool cedula = true;
+                if (contador == 0)
+                {
+                    bool cedula = true;
+                    bool usuario = true;
+                    bool correo = true;
+                    bool telefono = true;
 
 
-                //try
-                //{
+                    //try
+                    //{
                     cedula = Clientes_Contr.Revisar_cedula(Convert.ToInt32(textBoxcedula.Text.Trim()));
-                //}
-                //catch (Exception Ex)
-                //{
-                //    cedula = 0;
-                //    throw;
-                //}
+                    usuario = Clientes_Contr.Revisar_usuario(textBoxusuario.Text.Trim().ToString());
+                    telefono = Clientes_Contr.Revisar_telefono(Convert.ToInt32(textBoxnumerotelefono.Text.Trim()));
+                    correo = Clientes_Contr.Revisar_correo(textBoxcorreoelectronico.Text.Trim().ToString());
+                    //}
+                    //catch (Exception Ex)
+                    //{
+                    //    cedula = 0;
+                    //    throw;
+                    //}
 
-                int contador2 = 0;
 
-   
 
-                if (cedula == true)
-                {
-                    MessageBox.Show("Esta cédula ya está registrada");
-                    contador2 = contador2 + 1;
-                }
-                if (contador==0 && cedula==false)
-                { 
 
-                
-                Cliente pCliente = new Cliente();
-                pCliente.Nombre1 = textBoxprimernombre.Text.Trim();
-                pCliente.Nombre2 = textBoxsegundonombre.Text.Trim();
-                pCliente.Apellido1 = textBoxprimerapellido.Text.Trim();
-                pCliente.Apellido2 = textBoxsegundoapellido.Text.Trim();
-                pCliente.Cedula = Convert.ToInt32(textBoxcedula.Text.Trim());
-                pCliente.Fecha_Nac = dateTimePicker1.Value.Year + "/" + dateTimePicker1.Value.Month + "/" + dateTimePicker1.Value.Day;
-                pCliente.id_genero = Convert.ToInt32(comboBoxgenero.SelectedValue);
-                pCliente.Numero_telefono = Convert.ToInt32(textBoxnumerotelefono.Text.Trim());
-                pCliente.id_tipo_telefono = Convert.ToInt32(comboBoxtipotelefono.SelectedValue);
-                pCliente.Correo_electronico = textBoxcorreoelectronico.Text.Trim();
-                pCliente.id_tipo_correo = Convert.ToInt32(comboBoxtipocorreo.SelectedValue);
-                pCliente.Usuario = textBoxusuario.Text.Trim();
-                pCliente.Contrasena = textBoxcontrasena.Text.Trim();
 
-                if (radioButtoncliente.Checked)
-                {
-                    pCliente.id_tipo_usuario = Convert.ToInt32(1);
-                }
-                if (radioButtonadministrador.Checked)
-                {
-                    pCliente.id_tipo_usuario = Convert.ToInt32(2);
-                }
-                pCliente.id_tipo_cliente = Convert.ToInt32(comboBoxtipocliente.SelectedValue);
 
-                pCliente.activo = Convert.ToInt32(1);
 
-                int resultado = Clientes_Contr.Agregar(pCliente);
+                    if (cedula == true)
+                    {
+                        MessageBox.Show("Esta cédula ya está registrada");
 
-                if (resultado > 0)
-                {
-                    MessageBox.Show("Cliente Guardado Con Exito!!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("No se pudo guardar el cliente", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
+                    }
+
+                    if (usuario == true)
+                    {
+                        MessageBox.Show("Esta usuario ya está registrado");
+
+                    }
+
+
+
+                    if (telefono == true)
+                    {
+                        MessageBox.Show("Este telefono ya está registrado");
+
+                    }
+
+                    if (correo == true)
+                    {
+                        MessageBox.Show("Este correo ya está registrado");
+
+                    }
+                    if (contador == 0 && cedula == false && usuario == false
+                        && telefono == false && correo == false)
+                    {
+
+
+                        Cliente pCliente = new Cliente();
+                        pCliente.Nombre1 = textBoxprimernombre.Text.Trim();
+                        pCliente.Nombre2 = textBoxsegundonombre.Text.Trim();
+                        pCliente.Apellido1 = textBoxprimerapellido.Text.Trim();
+                        pCliente.Apellido2 = textBoxsegundoapellido.Text.Trim();
+                        pCliente.Cedula = Convert.ToInt32(textBoxcedula.Text.Trim());
+                        pCliente.Fecha_Nac = dateTimePicker1.Value.Year + "/" + dateTimePicker1.Value.Month + "/" + dateTimePicker1.Value.Day;
+                        pCliente.id_genero = Convert.ToInt32(comboBoxgenero.SelectedValue);
+                        pCliente.Numero_telefono = Convert.ToInt32(textBoxnumerotelefono.Text.Trim());
+                        pCliente.id_tipo_telefono = Convert.ToInt32(comboBoxtipotelefono.SelectedValue);
+                        pCliente.Correo_electronico = textBoxcorreoelectronico.Text.Trim();
+                        pCliente.id_tipo_correo = Convert.ToInt32(comboBoxtipocorreo.SelectedValue);
+                        pCliente.Usuario = textBoxusuario.Text.Trim();
+                        pCliente.Contrasena = textBoxcontrasena.Text.Trim();
+
+                        if (radioButtoncliente.Checked)
+                        {
+                            pCliente.id_tipo_usuario = Convert.ToInt32(1);
+                        }
+                        if (radioButtonadministrador.Checked)
+                        {
+                            pCliente.id_tipo_usuario = Convert.ToInt32(2);
+                        }
+                        pCliente.id_tipo_cliente = Convert.ToInt32(comboBoxtipocliente.SelectedValue);
+
+                        pCliente.activo = Convert.ToInt32(1);
+
+                        int resultado = Clientes_Contr.Agregar(pCliente);
+
+                        if (resultado > 0)
+                        {
+                            MessageBox.Show("Cliente Guardado Con Exito!!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se pudo guardar el cliente", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+                    }
                 }
 
             }

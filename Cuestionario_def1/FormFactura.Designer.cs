@@ -36,32 +36,34 @@
             this.label1cedula = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttoncancelarseleccionado
             // 
-            this.buttoncancelarseleccionado.Location = new System.Drawing.Point(475, 347);
+            this.buttoncancelarseleccionado.Location = new System.Drawing.Point(475, 399);
             this.buttoncancelarseleccionado.Name = "buttoncancelarseleccionado";
             this.buttoncancelarseleccionado.Size = new System.Drawing.Size(133, 27);
             this.buttoncancelarseleccionado.TabIndex = 15;
             this.buttoncancelarseleccionado.Text = "Cancelar";
             this.buttoncancelarseleccionado.UseVisualStyleBackColor = true;
+            this.buttoncancelarseleccionado.Click += new System.EventHandler(this.buttoncancelarseleccionado_Click);
             // 
             // buttonaceptarseleccionado
             // 
-            this.buttonaceptarseleccionado.Location = new System.Drawing.Point(226, 346);
+            this.buttonaceptarseleccionado.Location = new System.Drawing.Point(226, 398);
             this.buttonaceptarseleccionado.Name = "buttonaceptarseleccionado";
             this.buttonaceptarseleccionado.Size = new System.Drawing.Size(130, 28);
             this.buttonaceptarseleccionado.TabIndex = 14;
-            this.buttonaceptarseleccionado.Text = "Aceptar";
+            this.buttonaceptarseleccionado.Text = "Generar Factura";
             this.buttonaceptarseleccionado.UseVisualStyleBackColor = true;
             this.buttonaceptarseleccionado.Click += new System.EventHandler(this.buttonaceptarseleccionado_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(69, 119);
+            this.dataGridView1.Location = new System.Drawing.Point(57, 161);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(735, 205);
             this.dataGridView1.TabIndex = 13;
@@ -81,6 +83,8 @@
             this.textBoxbuscarcedula.Name = "textBoxbuscarcedula";
             this.textBoxbuscarcedula.Size = new System.Drawing.Size(121, 20);
             this.textBoxbuscarcedula.TabIndex = 10;
+            this.textBoxbuscarcedula.TextChanged += new System.EventHandler(this.textBoxbuscarcedula_TextChanged);
+            this.textBoxbuscarcedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxbuscarcedula_KeyPress);
             // 
             // label1cedula
             // 
@@ -108,11 +112,21 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 16;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(54, 120);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(146, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Facturas Pendientes de pago";
+            // 
             // FormFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 452);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.buttoncancelarseleccionado);
             this.Controls.Add(this.buttonaceptarseleccionado);
@@ -140,5 +154,6 @@
         private System.Windows.Forms.Label label1cedula;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label1;
     }
 }

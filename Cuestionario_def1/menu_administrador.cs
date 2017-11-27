@@ -47,5 +47,12 @@ namespace Cuestionario_def1
             frmfc.ShowDialog();
 
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Responder_cuestionario frm1 = new Responder_cuestionario();
+            frm1.usuario = sUsuario;
+            frm1.ShowDialog();
+        }
     }
 }

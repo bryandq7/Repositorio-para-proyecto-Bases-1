@@ -140,6 +140,72 @@ namespace Cuestionario_def1
 
         }
 
+        public static bool Revisar_usuario(string usuario)
+        {
+            int count = 0;
+
+            MySqlCommand _comando = new MySqlCommand(String.Format("Select count(*) nombre_usuario from usuarios_sistema where Nombre_usuario = '{0}'",
+                usuario), Adaptador.ObtenerConexion());
+
+            count = Convert.ToInt32(_comando.ExecuteScalar());
+
+
+            if (count == 0)
+            {
+                return false;
+            }
+
+            return true;
+
+           
+
+
+        }
+
+        public static bool Revisar_correo(string correo)
+        {
+            int count = 0;
+
+            MySqlCommand _comando = new MySqlCommand(String.Format("Select count(*) nombrecorreo from Correo where nombreCorreo = '{0}'",
+                correo), Adaptador.ObtenerConexion());
+
+            count = Convert.ToInt32(_comando.ExecuteScalar());
+
+
+            if (count == 0)
+            {
+                return false;
+            }
+
+            return true;
+
+
+
+
+        }
+
+        public static bool Revisar_telefono(int telefono)
+        {
+            int count = 0;
+
+            MySqlCommand _comando = new MySqlCommand(String.Format("Select count(*) idtelefono from telefono where idtelefono = '{0}'",
+                telefono), Adaptador.ObtenerConexion());
+
+            count = Convert.ToInt32(_comando.ExecuteScalar());
+
+
+            if (count == 0)
+            {
+                return false;
+            }
+
+            return true;
+
+
+
+
+        }
+
 
 
 

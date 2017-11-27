@@ -21,7 +21,7 @@ namespace Cuestionario_def1
                 "INNER JOIN Usuarios_sistema U on  chu.Usuarios_sistema_Nombre_usuario = U.Nombre_usuario " +
                 "INNER JOIN Cliente Cl  on U.cliente_persona_cedula = Cl.persona_cedula " +
                 "INNER JOIN Persona P on Cl.persona_cedula = p.cedula" +
-                " where cedula = '{0}' and fecha_creacion = '{1}'", pcedula, cfecha_creacion), Adaptador.ObtenerConexion());
+                " where cedula = '{0}' and fecha_creacion = '{1}' and c.activo = '{2}' ", pcedula, cfecha_creacion,1), Adaptador.ObtenerConexion());
 
             MySqlDataReader _reader = _comando.ExecuteReader();
 
@@ -54,7 +54,7 @@ namespace Cuestionario_def1
                 "FROM Factura F  Join detallefactura dt on f.idFactura = dt.Factura_idFactura " +
                 "Join Cliente C on f.cliente_persona_cedula = c.persona_cedula " +
                 "Join Persona P  on p.cedula = c.persona_cedula " +
-                " where f.idfactura={0}", pidFactura), conexion);
+                " where f.idfactura={0} ", pidFactura), conexion);
 
             MySqlDataReader _reader = _comando.ExecuteReader();
 
@@ -183,6 +183,27 @@ namespace Cuestionario_def1
             2, id_factura), conexion);
 
             retorno = comando3.ExecuteNonQuery();
+            //MySqlCommand comando4 = new MySqlCommand(string.Format("Update Cuestionario set activo='{0}' where idCuestionario={1}",
+            //2, id_cuestionario), conexion);
+
+            //retorno = comando4.ExecuteNonQuery();
+            conexion.Close();
+
+            return retorno;
+
+        }
+
+
+        public static int Pagar_Cuestionario(int id_cuestionario)
+        {
+            int retorno = 0;
+
+            MySqlConnection conexion = Adaptador.ObtenerConexion();
+
+            MySqlCommand comando4 = new MySqlCommand(string.Format("Update Cuestionario set activo='{0}' where idCuestionario={1}",
+            2, id_cuestionario), conexion);
+
+            retorno = comando4.ExecuteNonQuery();
             conexion.Close();
 
             return retorno;

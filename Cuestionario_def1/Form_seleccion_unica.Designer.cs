@@ -35,6 +35,10 @@
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.button_aceptar = new System.Windows.Forms.Button();
             this.labelPregunta = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelnombre_cuestionario
@@ -92,11 +96,11 @@
             // 
             // button_aceptar
             // 
-            this.button_aceptar.Location = new System.Drawing.Point(555, 389);
+            this.button_aceptar.Location = new System.Drawing.Point(536, 396);
             this.button_aceptar.Name = "button_aceptar";
             this.button_aceptar.Size = new System.Drawing.Size(153, 38);
             this.button_aceptar.TabIndex = 5;
-            this.button_aceptar.Text = "Aceptar";
+            this.button_aceptar.Text = "Siguiente";
             this.button_aceptar.UseVisualStyleBackColor = true;
             this.button_aceptar.Click += new System.EventHandler(this.button_aceptar_Click);
             // 
@@ -109,11 +113,51 @@
             this.labelPregunta.TabIndex = 6;
             this.labelPregunta.Text = "label1";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(50, 157);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(16, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "1)";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(50, 220);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(16, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "2)";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(50, 278);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(16, 13);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "3)";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(50, 341);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(16, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "4)";
+            // 
             // Form_seleccion_unica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(836, 455);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.labelPregunta);
             this.Controls.Add(this.button_aceptar);
             this.Controls.Add(this.radioButton4);
@@ -138,5 +182,9 @@
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.Button button_aceptar;
         private System.Windows.Forms.Label labelPregunta;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

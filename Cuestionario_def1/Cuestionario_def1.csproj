@@ -101,6 +101,12 @@
     <Compile Include="FormSeleccion_multiple.Designer.cs">
       <DependentUpon>FormSeleccion_multiple.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_generarReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_generarReportes.Designer.cs">
+      <DependentUpon>Form_generarReportes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_pagar_factura.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSeleccion_multiple.resx">
       <DependentUpon>FormSeleccion_multiple.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_generarReportes.resx">
+      <DependentUpon>Form_generarReportes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_pagar_factura.resx">
       <DependentUpon>Form_pagar_factura.cs</DependentUpon>
